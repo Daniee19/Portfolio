@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Arimo:ital,wght@0,400..700;1,400..700&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Arimo';
+}
+
+header h1 {
+    color: #ff7b00;
+    font-family: 'Archivo black';
+    font-size: 32px;
+    display: inline-block;
+    padding: 8px;
+    padding-left: 90px;
+    padding-right: 50px;
+}
+header nav{
+    width: 50%;
+    margin: auto;
+}
+header nav ul {
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;   
+}
+header nav li {
+    color: #fff;
+}
+header nav li a{
+    color: white;
+    text-decoration: none;
+    transition: 0.2s;
+}
+header nav li a:hover{
+    color: #ff7b00;
+    
+}
+
+.h1-nav{
+    /*background-color: #181818;*/
+    display: flex;
+    gap: 30px;
+}
+
+/*Carta de Presentacion*/
+.presentacion_card{
+    padding: 20px;
+}
+.contenedor_entrada{
+    background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url(img/banner.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+.resumen_card{
+    display: flex;
+    flex-direction: column;
+    background-color: #222222;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 250px;
+    border-radius: 20px;
+}
+
+.resumen_card img{
+    
+    width: 180px;
+    border-radius: 50%;
+    margin: auto;
+    margin-bottom: 20px;
+    border: 6px solid #ff7b00;
+}
+.info_breve{
+    text-align: center;
+    color: #fff;
+}
+.info_breve h2{
+    font-family: 'Archivo black';
+    font-size: 1.2em;
+}
+.info_breve p{
+    font-size: 0.8em;
+}
+
+.redes{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.redes a i{
+    border: 1.2px solid rgb(255, 255, 255);
+    padding: 4px;
+    padding-left: 5px;
+    padding-right: 5px; 
+    border-radius: 50%;
+    color: white;
+    transition: 0.4s;
+}
+.redes a i:hover{
+    color: #ff7b00;
+}
+.bloque_1{
+    background-color: #ff7b00;
+}
