@@ -6,20 +6,20 @@
     padding: 0px;
     box-sizing: border-box;
     font-family: 'Arimo';
+    scroll-behavior: smooth;
+    cursor: default;
 }
 
 header h1 {
-    color: #ff7b00;
+    color: #00e4da;
     font-family: 'Archivo black';
     font-size: 32px;
     display: inline-block;
-    padding: 8px;
-    padding-left: 90px;
-    padding-right: 50px;
+    padding: 10px 0px 10px 5%;
 }
 
 header nav {
-    width: 50%;
+    width: 80%;
     margin: auto;
 }
 
@@ -27,6 +27,15 @@ header nav ul {
     display: flex;
     justify-content: space-evenly;
     list-style: none;
+    flex-direction: column;
+    position: absolute;
+    right: 14px;
+    align-items: end;
+    padding: 10px 20px 10px 20px;
+    background-color: #181818;
+    line-height: 40px;
+    font-size: 1.3rem;
+    border-radius: 4px;
 }
 
 header nav li {
@@ -37,20 +46,40 @@ header nav li a {
     color: white;
     text-decoration: none;
     transition: 0.2s;
+    font-weight: 600;
+    cursor: pointer;
 }
 
 header nav li a:hover {
-    color: #ff7b00;
+    color: #00e4da;
+}
 
+nav {
+    display: none;
+}
+
+.elemento {
+    position: absolute;
+    display: block;
+    color: #fff;
+    right: 20px;
+    top: 25px;
+    cursor: pointer;
 }
 
 .h1-nav {
     /*background-color: #181818;*/
-    display: flex;
+    display: block;
     gap: 30px;
 }
 
-/*Carta de Presentacion*/
+.h1-nav img {
+    width: 62px;
+    padding-left: 20px;
+    position: absolute;
+}
+
+/*Inicio*/
 .presentacion_card {
     padding: 20px;
 }
@@ -60,7 +89,6 @@ header nav li a:hover {
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
-    max-width: 1100px;
 }
 
 .resumen_card {
@@ -70,19 +98,18 @@ header nav li a:hover {
     justify-content: center;
     align-items: center;
     margin: auto;
-
-    padding-top: 20px;
-    padding-bottom: 20px;
-    width: 350px;
+    padding: 24px;
+    width: 100%;
     border-radius: 20px;
+    max-width: 350px;
 }
 
-.resumen_card img {
-    width: 280px;
+.resumen_card>img {
     border-radius: 50%;
     margin: auto;
     margin-bottom: 20px;
-    border: 6px solid #ff7b00;
+    border: 6px solid #00e4da;
+    width: 100%;
 }
 
 .info_breve {
@@ -93,10 +120,12 @@ header nav li a:hover {
 .info_breve h2 {
     font-family: 'Archivo black';
     font-size: 1.6em;
+    margin-bottom: 10px;
 }
 
 .info_breve p {
     font-size: 1.2em;
+    margin-bottom: 10px;
 }
 
 .redes {
@@ -111,19 +140,19 @@ header nav li a:hover {
     border-radius: 50%;
     color: white;
     transition: 0.4s;
+    cursor: pointer;
 }
 
 .redes a i:hover {
-    color: #ff7b00;
+    color: #00e4da;
 }
 
 /*Sobre mí*/
 .sobre_mí {
-    max-width: 1100px;
     /*Arriba - derecha - abajo - izquierda*/
-    padding: 30px 100px 30px 100px;
     background-color: #222222;
     color: #fff;
+    padding: 50px;
 }
 
 .sobre_mí h2 {
@@ -133,16 +162,36 @@ header nav li a:hover {
     font-size: 2.5em;
 }
 
-.sobre_mí p {
+.sobre_mí>div>p {
     font-size: 1.2em;
-    margin-bottom: 20px;
+    padding: 20px;
+}
+
+.sobre_mí>p {
+    line-height: 20px;
 }
 
 .fila {
     display: grid;
     gap: 50px;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+}
 
+.sobre_mí .fila {
+    gap: 0px;
+    padding-top: 10px;
+}
+
+.sobre_mí .prueba {
+    width: 100%;
+}
+
+.sobre_mí .prueba a {
+    color: #fff;
+}
+
+.sobre_mí .fila .col {
+    padding: 20px 0px 20px 0px;
 }
 
 .sobre_mí button {
@@ -161,27 +210,36 @@ header nav li a:hover {
 }
 
 .sobre_mí button:hover {
-    scale: 1.1;
-}
-
-.intereses {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 4px;
-    width: 40%;
+    transform: scale(1.1);
 }
 
 .fila .col h3 {
     font-size: 1.4em;
     margin-bottom: 10px;
+    text-align: center;
+}
+
+.intereses {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4px;
+    width: 100%;
+    margin: auto;
 }
 
 .interes {
-    height: 100%;
-    background: 00000022;
-    margin: auto;
+    height: 110px;
+    background: #1c1c1c;
     width: 100%;
+    font-size: 1.5rem;
+    transition: 0.4s;
+}
 
+.interes:hover {
+    cursor: context-menu;
+    background-color: #ffffff;
+    color: #ffffff;
+    border: 2px solid #000000;
 }
 
 .interes span {
@@ -189,18 +247,27 @@ header nav li a:hover {
     flex-direction: column;
     background-color: #00000022;
     padding: 10px;
-    color: #ff7b00;
-    height: 70px;
+    color: #fff;
+    height: 100%;
     align-items: center;
     line-height: 30px;
     justify-content: center;
-    width: 80px;
+    width: 100%;
+    transition: 0.4s;
+}
 
+.interes span:hover {
+    scale: 1.2;
+    color: #000000;
 }
 
 .sobre_mí p>span {
-    color: #ff7b00;
+    color: #00e4da;
     font-size: 600;
+}
+
+.intereses {
+    grid-template-columns: 1fr 1fr;
 }
 
 .fila .col {
@@ -214,14 +281,20 @@ header nav li a:hover {
 
 .prueba span {
     width: 380px;
+    color: #fff;
+}
 
-    color: #ff7b00;
+.prueba .dato {
+    color: #00e4da;
+}
+
+.prueba a i {
+    cursor: pointer;
 }
 
 /*SKILLS*/
 .skills {
-    padding: 30px 100px 30px 100px;
-    max-width: 1100px;
+    padding: 50px 50px 70px 50px;
     background-color: #151515;
 }
 
@@ -242,7 +315,7 @@ header nav li a:hover {
 }
 
 .circuloI {
-    background-color: #ff7b00;
+    background-color: #00e4da;
     border-radius: 50%;
     width: 40px;
     height: 40px;
@@ -252,14 +325,14 @@ header nav li a:hover {
     text-align: center;
     line-height: 40px;
     right: -15px;
-    color: white;
-    font-size: 600;
+    color: #000000;
+    font-weight: 600;
 }
 
 .javascript {
     width: 40%;
     height: 8px;
-    background-color: #ff7b00;
+    background-color: #00e4da;
     z-index: 99;
     position: relative;
     color: #fff;
@@ -268,7 +341,7 @@ header nav li a:hover {
 .html_css {
     width: 89%;
     height: 8px;
-    background-color: #ff7b00;
+    background-color: #00e4da;
     z-index: 99;
     position: relative;
 }
@@ -276,7 +349,7 @@ header nav li a:hover {
 .html_css {
     width: 86%;
     height: 8px;
-    background-color: #ff7b00;
+    background-color: #00e4da;
     z-index: 99;
     position: relative;
 }
@@ -284,7 +357,7 @@ header nav li a:hover {
 .java {
     width: 70%;
     height: 8px;
-    background-color: #ff7b00;
+    background-color: #00e4da;
     z-index: 99;
     position: relative;
 }
@@ -292,7 +365,7 @@ header nav li a:hover {
 .bootstrap {
     width: 90%;
     height: 8px;
-    background-color: #ff7b00;
+    background-color: #00e4da;
     z-index: 99;
     position: relative;
 }
@@ -300,7 +373,7 @@ header nav li a:hover {
 .mysql {
     width: 80%;
     height: 8px;
-    background-color: #ff7b00;
+    background-color: #00e4da;
     z-index: 99;
     position: relative;
 }
@@ -314,14 +387,14 @@ header nav li a:hover {
 
 .skills .fila {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
 }
 
 /*Profesional skills*/
 .skills .comunicacion {
     width: 86%;
     height: 8px;
-    background-color: #ff7b00;
+    background-color: #00e4da;
     z-index: 99;
     position: relative;
 }
@@ -329,7 +402,7 @@ header nav li a:hover {
 .skills .trabajo_equipo {
     width: 100%;
     height: 8px;
-    background-color: #ff7b00;
+    background-color: #00e4da;
     z-index: 99;
     position: relative;
     font-size: 0.8em;
@@ -338,7 +411,7 @@ header nav li a:hover {
 .skills .creatividad {
     width: 70%;
     height: 8px;
-    background-color: #ff7b00;
+    background-color: #00e4da;
     z-index: 99;
     position: relative;
 }
@@ -346,7 +419,7 @@ header nav li a:hover {
 .skills .dedicacion {
     width: 90%;
     height: 8px;
-    background-color: #ff7b00;
+    background-color: #00e4da;
     z-index: 99;
     position: relative;
 }
@@ -354,7 +427,7 @@ header nav li a:hover {
 .skills .adaptabilidad {
     width: 80%;
     height: 8px;
-    background-color: #ff7b00;
+    background-color: #00e4da;
     z-index: 99;
     position: relative;
 }
@@ -367,28 +440,26 @@ header nav li a:hover {
 .curriculum {
     background-color: #222222;
     color: #fff;
-    padding: 50px;
-    max-width: 1100px;
+    padding: 50px 30px 50px 30px;
 }
 
 .curriculum .fila {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+    gap: 0px;
 }
 
 .curriculum h2 {
     text-align: center;
-    padding-top: 20px;
     margin-bottom: 20px;
     font-size: 2.7em;
     font-family: 'Archivo black';
 }
 
 .curriculum span {
-    color: #ff7b00;
+    color: #00e4da;
     display: block;
     font-weight: 600;
-
 }
 
 .curriculum .fecha {
@@ -405,30 +476,29 @@ header nav li a:hover {
 }
 
 .curriculum .card {
-    margin-top: 10px;
     background: #151515;
-    padding: 26px;
+    padding: 30px;
+    max-width: 350px;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 20px;
 }
 
 /*PORTFOLIO*/
 .portfolio {
     background-color: #1c1c1c;
     padding: 50px;
-    max-width: 1100px;
     color: #fff;
 }
 
 .portfolio .fila {
-    max-width: 1100px;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 10px;
-
+    grid-template-columns: 1fr;
+    gap: 16px;
 }
 
 .portfolio h2 {
     text-align: center;
     margin-bottom: 20px;
-    padding-top: 10px;
     font-size: 2.6em;
     font-family: 'Archivo black';
 }
@@ -463,11 +533,8 @@ header nav li a:hover {
     width: 100%;
     height: 100%;
 
-    position: relative;
-    background-color: red;
+
     position: absolute;
-
-
 }
 
 .proyectos .info_proyecto:hover {
@@ -479,8 +546,7 @@ header nav li a:hover {
 .contacto {
     background-color: #181818;
     color: #fff;
-    max-width: 1100px;
-    padding: 20px 10px 50px 10px;
+    padding: 50px 50px 75px 50px;
 }
 
 .contacto .fila {
@@ -490,11 +556,13 @@ header nav li a:hover {
 .contacto h2 {
     text-align: center;
     margin-bottom: 20px;
+    font-size: 2.6em;
+    font-family: 'Archivo black';
 }
 
 table {
-    margin: auto;
-    padding: 10px 14px 10px 14px;
+    padding: 10px 0px 24px 0px;
+    width: 100%;
 }
 
 tr {
@@ -503,10 +571,12 @@ tr {
 
 .contacto table input {
     height: 45px;
-    width: 400px;
+    width: 100%;
     background-color: #1f1f1f;
     border: none;
     color: #fff;
+    padding: 10px;
+    cursor: auto;
 }
 
 .contacto textarea {
@@ -517,13 +587,23 @@ tr {
     background-color: #1f1f1f;
     border: none;
     color: #fff;
+    padding: 10px;
+    cursor: auto;
 }
 
 .contacto iframe {
     display: flex;
-    width: 400px;
+    width: 100%;
     margin: auto;
-    height: 400px;
+    height: 320px;
+    padding: 0px;
+}
+
+.contacto .info_direccion {
+    font-size: 1.4rem;
+    color: white;
+    padding-top: 10px;
+    text-align: center;
 }
 
 .contacto button {
@@ -547,14 +627,27 @@ footer {
     position: relative;
     background: #151515;
     height: 200px;
-    max-width: 1100px;
+}
+
+
+footer .div_footer {
+    color: #fff;
+    position: relative;
+    top: 0px;
+    background-color: transparent;
 }
 
 footer .div_footer i {
-    display: flex;
-    justify-content: center;
     color: #fff;
     cursor: pointer;
+    position: absolute;
+    right: -16px;
+}
+
+/*El div que contiene al ícono de la flechita*/
+footer .eldiv {
+    display: flex;
+    justify-content: center;
 }
 
 .redes {
@@ -563,17 +656,13 @@ footer .div_footer i {
 }
 
 .redes a i {
-    padding: 4px;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding: 4px 5px;
     border-radius: 50%;
     color: white;
     transition: 0.4s;
 }
 
-.redes a i:hover {
-    color: #ff7b00;
-}
+
 
 .posicionar_redes {
     text-align: center;
@@ -585,4 +674,347 @@ footer .div_footer i {
     text-align: center;
     font-weight: 800;
     color: #fff;
+}
+
+.mostrar_toggle {
+    display: block;
+}
+
+.hr_final {
+    margin-top: 10px;
+}
+
+.creditos {
+    display: block;
+    text-align: center;
+    margin: auto;
+    text-decoration: none;
+    color: #fff;
+    padding: 10px;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+.creditos:hover {
+    color: #00e4da;
+}
+
+/*Notificacion*/
+.notificacion {
+    display: flex;
+    position: fixed;
+    background: #52c13b;
+    right: 0px;
+    z-index: 250;
+    border-radius: 4px;
+    overflow: hidden;
+    /*animation: 1s infinite mensaje_animacion;*/
+    display: none;
+}
+
+.notificacion>i {
+    padding: 10px 0px 10px 10px;
+    color: #fff;
+}
+
+.mensaje_ntf {
+    color: #fff;
+    padding: 10px;
+}
+
+.cerrar_ntf {
+    background-color: #55ab44;
+    color: #fff;
+    padding: 10px;
+    transform: translateY(0px);
+    top: 0px;
+    right: 0px;
+}
+
+.animacion_ntf {
+    /*Aquí tiene que ir el forwards*/
+    animation: 1s mensaje_animacion forwards;
+}
+
+.mostrar_notificacion {
+    display: flex;
+}
+
+/*Animaciones*/
+@keyframes mensaje_animacion {
+
+    0% {
+        transform: translateX(100%);
+    }
+
+    40% {
+        transform: translateX(-10%);
+    }
+
+    80% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-10px);
+    }
+}
+
+.cerrar_ntf i:hover {
+    cursor: pointer;
+}
+
+.retirada {
+    animation: 1s mensaje_animacion_retirada forwards;
+}
+
+@keyframes mensaje_animacion_retirada {
+    0% {
+        transform: translateX(-10px);
+    }
+
+    40% {
+        transform: translateX(0%);
+    }
+
+    80% {
+        transform: translateX(-10%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/*Min*/
+@media (min-width: 576px) {
+    .intereses {
+        width: 50%;
+    }
+
+    .portfolio {
+        padding: 50px 140px 50px 140px;
+    }
+
+    table {
+        padding: 0px 30px 24px 30px;
+    }
+
+    .presentacion_card {
+        padding: 100px;
+    }
+}
+
+/*Md*/
+@media (min-width: 768px) {
+    table {
+        padding: 0px;
+    }
+
+    .portfolio {
+        background-color: #1c1c1c;
+        padding: 50px 100px 50px 100px;
+        color: #fff;
+    }
+
+    .portfolio .fila {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    /*Curriculum*/
+    .curriculum {
+        padding: 50px;
+    }
+
+    .curriculum .fila {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    hr {
+        margin: 10px 0px;
+    }
+
+    .curriculum .fila .col {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .curriculum .card {
+        min-height: 410px;
+    }
+
+    /*Skills*/
+    .skills {
+        padding: 50px 128px 70px 128px;
+    }
+
+    .skills .fila {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .sobre_mí {
+        padding: 50px;
+    }
+
+    /*Contacto*/
+    .contacto .fila {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+
+    .contacto iframe {
+        height: 80%;
+    }
+}
+
+/*Lg*/
+@media (min-width: 992px) {
+    .mensaje_ntf {
+        padding: 18px 10px;
+    }
+
+    .notificacion>i {
+        padding: 12px 0px 10px 10px;
+        font-size: 1.8rem;
+    }
+
+    .cerrar_ntf {
+        padding: 17px 20px 0px 20px;
+        font-size: 1.2rem;
+    }
+
+    .portfolio {
+        padding: 50px 250px 50px 250px;
+    }
+
+    /*Curriculum*/
+    .curriculum {
+        padding: 50px 100px;
+    }
+
+    .contacto {
+        padding: 50px 128px 75px 128px;
+    }
+
+    .intereses {
+        width: 50%;
+        gap: 6px;
+    }
+
+    .elemento {
+        display: none;
+    }
+
+    nav {
+        display: flex;
+    }
+
+    header nav ul {
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: 62%;
+        top: 0px;
+        right: 60px;
+        position: fixed;
+        z-index: 200;
+    }
+
+    .sobre_mí .fila {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .sobre_mí {
+        padding: 50px 128px 50px 128px;
+    }
+
+    .datos_personales {
+        line-height: 30px;
+    }
+
+    .contacto iframe {
+        height: 100%;
+    }
+
+    table {
+        padding-top: 5%;
+    }
+
+}
+
+@media(min-width: 1024px) {
+    .presentacion_card {
+        padding: 0.5%;
+    }
+}
+
+/*Xl*/
+@media (min-width: 1200px) {
+    .presentacion_card {
+        padding: 5%;
+    }
+
+    .portfolio {
+        padding: 50px 200px 50px 200px;
+    }
+
+    .portfolio .fila {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+
+    }
+
+    .curriculum {
+        padding: 20px 150px 20px 150px;
+    }
+
+    .curriculum .card {
+        padding: 40px;
+        max-width: 370px;
+    }
+
+    .contacto {
+        padding: 50px 120px 75px 120px;
+    }
+}
+
+/*Xxl*/
+@media (min-width: 1400px) {
+
+    /*Curriculum*/
+    .curriculum {
+        padding: 20px 20% 20px 20%;
+    }
+
+    header nav ul {
+        width: 50%;
+        right: 60px;
+    }
+
+    .portfolio {
+        padding: 50px 300px 70px 300px;
+    }
+
+    .skills {
+        padding: 50px 300px 70px 300px;
+    }
+
+    .sobre_mí {
+        padding: 50px 300px 50px 300px;
+    }
+
+    .contacto {
+        padding: 50px 300px 75px 300px;
+    }
+
+    table {
+        width: 90%;
+    }
+}
+
+@media (min-width: 1600px) {
+    .portfolio {
+        padding: 50px 500px 70px 500px;
+    }
 }

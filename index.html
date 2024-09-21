@@ -3,28 +3,40 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/c353473263.js" crossorigin="anonymous"></script>
     <title>Portfolio</title>
 </head>
 
 <body>
+
+    <div class="notificacion retirada" id="notificacion">
+        <i class="fa-solid fa-square-check"></i>
+        <span class="mensaje_ntf"> Mensaje enviado con éxito </span>
+        <div class="cerrar_ntf">
+            <i class="fa-solid fa-x" id="cerrar_ntf"></i>
+        </div>
+    </div>
+
     <!--Inicio -->
-    <div class="contenedor_entrada">
+    <div class="contenedor_entrada" id="inicio">
         <!--Nav-->
         <header>
             <div class="h1-nav">
-                <h1>Daniel</h1>
-                <nav>
+                <h1>Daniel <img src="img/peru.png" alt="país"></h1>
+                <div class="elemento" id="elemento"><i class="fa-solid fa-bars fa-2xl"></i></div>
+                <nav id="nav">
                     <ul>
-                        <li><a href="#">Inicio</a></li>
-                        <li><a href="#">Sobre mí</a></li>
-                        <li><a href="#">Skills</a></li>
-                        <li><a href="#">Curriculum</a></li>
-                        <li><a href="#">Contacto</a></li>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#sobre_mí">Sobre mí</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#curriculum">Curriculum</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
                     </ul>
                 </nav>
+
             </div>
         </header>
         <!--card presentacion-->
@@ -36,67 +48,78 @@
                     <p>Estudiante de Ingeniería de Sistemas e Informática</p>
                 </div>
                 <div class="redes">
-                    <a href="#"><i class="fa-brands fa-github fa-2xl"></i></a>
-                    <a href="#"><i class="fa-brands fa-linkedin fa-2xl"></i></a>
+                    <a href="https://github.com/DevJourney19" target="_blank"><i
+                            class="fa-brands fa-github fa-2xl"></i></a>
+                    <a href="https://www.linkedin.com/in/daniel-casta%C3%B1eda-810056286/" target="_blank"><i
+                            class="fa-brands fa-linkedin fa-2xl"></i></a>
                 </div>
             </div>
 
         </section>
     </div>
     <!--Sobre mi-->
-    <section class="sobre_mí">
-        <div>
-            <h2>Sobre mí</h2>
-            <p><span>Hola, me llamo Daniel Castañeda. </span>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Quo rerum sequi officiis dolor fugit, ex,
-                deserunt iusto nemo numquam id in distinctio placeat suscipit asperiores. Error labore corrupti maxime
-                temporibus.</p>
-            <div class="fila">
-                <div class="col">
+    <section class="sobre_mí" id="sobre_mí">
+
+        <h2>Sobre mí</h2>
+        <p><span>¡Hola! Soy Daniel,</span> un apasionado estudiante de Ingeniería de Sistemas de 19 años de Perú. Estoy
+            lleno de energía y motivación para aprender y destacarme en el mundo de la tecnología. Desde que descubrí mi
+            amor por la programación, he dedicado mi tiempo a mejorar mis habilidades y explorar nuevas tecnologías.
+        </p>
+
+        <p> Mi principal objetivo es crecer profesionalmente y contribuir con soluciones innovadoras a proyectos
+            desafiantes. Soy autodidacta, curioso por naturaleza y siempre busco oportunidades para aprender algo nuevo
+            cada día. Me encanta trabajar en equipo, colaborar y compartir conocimientos, porque creo firmemente que
+            juntos podemos lograr más.</p>
+        <div class="fila">
+            <div class="col">
+                <div class="datos_personales">
                     <h3>Datos personales</h3>
                     <div class="prueba">
-                        <span>Cumpleaños</span>
-                        19-04-2005
+                        <span class="dato">Cumpleaños</span>
+                        <span>19-04-2005</span>
                     </div>
                     <div class="prueba">
-                        <span>Dirección</span>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit, quasi?
+                        <span class="dato">Dirección</span>
+                        <span>Jr. Las Anémonas #660, 4 las Flores - Lima, Perú</span>
                     </div>
                     <div class="prueba">
-                        <span>Correo</span>
-                        19-04-2005
+                        <span class="dato">Correo</span>
+                        <span><a href="https://mail.google.com/mail/?view=cm&fs=1&to=f4r3ver@gmail.com"
+                                target="_blank"><i class="fa-solid fa-envelope fa-bounce"></i></i></a></span>
                     </div>
                     <div class="prueba">
-                        <span>Cargo</span>
-                        Estudiante
-                    </div>
-                </div>
-
-                <div class="col">
-                    <h3>Mis Intereses</h3>
-                    <div class="intereses">
-                        <div class="interes">
-                            <span><i class="fa-solid fa-music"></i> Música </span>
-                        </div>
-                        <div class="interes">
-                            <span><i class="fa-regular fa-futbol"></i>Deporte</span>
-
-                        </div>
-                        <div class="interes">
-                            <span><i class="fa-solid fa-gamepad"></i>Juegos</span>
-
-                        </div>
-                        <div class="interes">
-                            <span><i class="fa-solid fa-mountain-sun"></i>Viajar</span>
-                        </div>
+                        <span class="dato">Cargo</span>
+                        <span>Estudiante</span>
                     </div>
                 </div>
             </div>
-            <button>Descargar CV <i class="fa-solid fa-download"></i></button>
+
+            <div class="col">
+                <h3>Mis Intereses</h3>
+                <div class="intereses">
+                    <div class="interes">
+                        <span><i class="fa-solid fa-music"></i> Música </span>
+                    </div>
+                    <div class="interes">
+                        <span><i class="fa-regular fa-futbol"></i>Deporte</span>
+
+                    </div>
+                    <div class="interes">
+                        <span><i class="fa-solid fa-gamepad"></i>Juegos</span>
+
+                    </div>
+                    <div class="interes">
+                        <span><i class="fa-solid fa-mountain-sun"></i>Viajar</span>
+                    </div>
+                </div>
+            </div>
+
         </div>
+        <button>Descargar CV <i class="fa-solid fa-download"></i></button>
+
     </section>
     <!--Skills-->
-    <section class="skills">
+    <section class="skills" id="skills">
         <h3>Skills</h3>
         <div class="fila">
             <div class="col">
@@ -191,7 +214,7 @@
 
     </section>
     <!--Curriculum-->
-    <section class="curriculum">
+    <section class="curriculum" id="curriculum">
         <h2>Curriculum</h2>
         <div class="fila">
             <div class="col">
@@ -200,159 +223,134 @@
                     <h4>Ingeniería de Sistemas e Informática</h4>
                     <span>Universidad Tecnológica del Perú</span>
                     <span class="fecha">2022 - Presente</span>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla ut quas fugiat laborum, porro,
-                        exercitationem molestiae excepturi debitis explicabo totam architecto nisi accusamus, voluptas
-                        consequatur officia dolorum adipisci laboriosam voluptatum?</p>
+                    <p>Actualmente me encuentro estudiando en la universidad tecnologíca del Perú, en el cual estoy
+                        adquiriendo valioso aprendizaje, aprovechándo al máximo por cada día que pasa, porque sé que
+                        esos cursos me servirán de gran manera en mi
+                        futuro profesional.</p>
                 </div>
-                <div class="card">
-                    <h4>Ingeniería de Sistemas e Informática</h4>
-                    <span>Universidad Tecnológica del Perú</span>
-                    <span class="fecha">2022 - Presente</span>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla ut quas fugiat laborum, porro,
-                        exercitationem molestiae excepturi debitis explicabo totam architecto nisi accusamus, voluptas
-                        consequatur officia dolorum adipisci laboriosam voluptatum?</p>
-                </div>
+
             </div>
             <div class="col">
                 <h3>Experiencia de trabajo</h3>
                 <div class="card">
                     <h4>Ingeniería de Sistemas e Informática</h4>
-                    <span>Universidad Tecnológica del Perú</span>
-                    <span class="fecha">2022 - Presente</span>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla ut quas fugiat laborum, porro,
-                        exercitationem molestiae excepturi debitis explicabo totam architecto nisi accusamus, voluptas
-                        consequatur officia dolorum adipisci laboriosam voluptatum?</p>
+                    <span>Proyectos académico de un sistema de restaurante</span>
+                    <span class="fecha">2023 - 2024</span>
+                    <p>Este proyecto se realizó teniendo en claro un enfoque hacia el cliente, en el cual se pueda
+                        interactuar para realizar compras, reservaciones, logeos, etc.
+                        <hr>
+                        Los lenguajes que se usaron fueron HTML, CSS, Javascript, PHP, MySQL. Y el framework de
+                        Bootstrap.
+                    </p>
                 </div>
                 <div class="card">
                     <h4>Ingeniería de Sistemas e Informática</h4>
-                    <span>Universidad Tecnológica del Perú</span>
-                    <span class="fecha">2022 - Presente</span>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla ut quas fugiat laborum, porro,
-                        exercitationem molestiae excepturi debitis explicabo totam architecto nisi accusamus, voluptas
-                        consequatur officia dolorum adipisci laboriosam voluptatum?</p>
+                    <span>Proyectos académico de un sistema de ventas</span>
+                    <span class="fecha">2023 - 2024</span>
+                    <p>Este proyecto es más enfocado en el cliente interno, en el cual se puede realizar diversas
+                        operaciones en distintos campos. Con la implementación de lógica, para poder realziar búsquedas,
+                        ordenamiento y todo aquello que involucre más la parte de backend.
+                        <hr>
+                        El lenguaje que se usó fue Java.
+                    </p>
                 </div>
             </div>
         </div>
         </div>
     </section>
     <!--Portfolio-->
-    <section class="portfolio">
+    <section class="portfolio" id="portfolio">
         <h2>Portfolio</h2>
-        <div>
-            <div class="fila">
-                <div class="col">
-                    <div class="proyectos">
+        <div class="fila">
+
+            <div class="col">
+                <div class="proyectos">
+                    <a href="https://github.com/DevJourney19/Proyecto_restaurante" target="_blank">
                         <div class="info_proyecto">
-                            <span>Sistema de Ventas</span>
-                            <span>Gestión</span>
+                            <span>Proyecto Restaurante</span>
+                            <span>Vista cliente</span>
                         </div>
-                        <img src="img/banner.jpg" alt="img">
-                    </div>
+                        <img src="img/restaurante.png" alt="img">
+                    </a>
                 </div>
-                <div class="col">
-                    <div class="proyectos">
-
-                        <div class="info_proyecto">
-                            <span>Sistema de Ventas</span>
-                            <span>Gestión</span>
-
-
-                        </div>
-                        <img src="img/banner.jpg" alt="img">
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="proyectos">
-
-                        <div class="info_proyecto">
-                            <span>Sistema de Ventas</span>
-                            <span>Gestión</span>
-
-                        </div>
-                        <img src="img/banner.jpg" alt="img">
-
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="proyectos">
-                        <div class="info_proyecto">
-                            <span>Sistema de Ventas</span>
-                            <span>Gestión</span>
-
-                        </div>
-                        <img src="img/banner.jpg" alt="img">
-
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="proyectos">
-                        <div class="info_proyecto">
-                            <div>Sistema de Ventas</div>
-                            <div>Gestión</div>
-
-                        </div>
-                        <img src="img/banner.jpg" alt="img">
-
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="proyectos">
-                        <div class="info_proyecto">
-                            <span>Sistema de Ventas</span>
-                            <span>Gestión</span>
-                        </div>
-                        <img src="img/banner.jpg" alt="img">
-
-                    </div>
-                </div>
-
             </div>
+            <div class="col">
+                <div class="proyectos">
+                    <a href="https://github.com/DevJourney19/SistemaVentasElectrika" target="_blank">
+                        <div class="info_proyecto">
+                            <span>Sistema de Ventas</span>
+                            <span>Gestión</span>
+                        </div>
+                        <img src="img/sistema_venta.png" alt="img">
+                    </a>
+                </div>
+            </div>
+
+
+        </div>
 
     </section>
     <!--Contacto-->
-    <section class="contacto">
+    <section class="contacto" id="contacto">
         <h2>Contacto</h2>
         <div class="fila">
             <div class="col">
-                <table>
-                    <tr>
-                        <th><input type="text" placeholder="Nombres"></th>
-                    </tr>
-                    <tr>
-                        <th><input type="email" placeholder="Correo Electrónico"></th>
-                    </tr>
-                    <tr>
-                        <th><input type="text" placeholder="Tema"></th>
-                    </tr>
-                    <tr>
-                        <th><textarea name="textarea" id="" placeholder="Escriba su mensaje..."></textarea></th>
-                    </tr>
-                    <tr>
-                        <th><button type="submit">Enviar mensaje <i class="fa-solid fa-paper-plane"></i></button></th>
-                    </tr>
-                </table>
-
+                <form action="js.js" method="POST" id="formulario">
+                    <table>
+                        <tr>
+                            <th><input type="text" placeholder="Nombre" name="nombre" id="nombre" required></th>
+                        </tr>
+                        <tr>
+                            <th><input type="email" placeholder="Correo Electrónico" name="correo" id="correo" required>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th><input type="text" placeholder="Tema" name="tema" id="tema" required></th>
+                        </tr>
+                        <tr>
+                            <th><textarea placeholder="Escriba su mensaje..." name="mensaje" id="mensaje"
+                                    required></textarea></th>
+                        </tr>
+                        <tr>
+                            <th><button id="btn_enviar" type="submit">Enviar mensaje <i
+                                        class="fa-solid fa-paper-plane"></i></button>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th id="th"></th>
+                        </tr>
+                    </table>
+                    <!--Importante no borrar-->
+                    <input type="hidden" name="_captcha" value="false">
+                </form>
             </div>
             <div class="col">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d290.0452916020249!2d-77.01171020307892!3d-12.0181161984862!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105cf19c86103a3%3A0x83102314de83ac70!2sBrook1%20-%20bodega%20%2F%20tienda!5e0!3m2!1ses-419!2spe!4v1726614797107!5m2!1ses-419!2spe"
                     width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <div class="info_direccion">Jr. Las Anémonas #660, 4 las Flores - Lima, Perú</div>
             </div>
         </div>
     </section>
     <footer>
-        <div class="div_footer">
-            <i class="fa-solid fa-circle-up fa-2xl"></i>
+        <div class="eldiv">
+            <div class="div_footer">
+                <a href="#inicio"><i class="fa-solid fa-circle-up fa-2xl"></i></a>
+            </div>
         </div>
         <div class="posicionar_redes">
             <div class="redes">
-                <a href="#"><i class="fa-brands fa-github fa-2xl"></i></a>
-                <a href="#"><i class="fa-brands fa-linkedin fa-2xl"></i></a>
+                <a href="https://github.com/DevJourney19" target="_blank"><i class="fa-brands fa-github fa-2xl"></i></a>
+                <a href="https://www.linkedin.com/in/daniel-casta%C3%B1eda-810056286/" target="_blank"><i
+                        class="fa-brands fa-linkedin fa-2xl"></i></a>
             </div>
         </div>
-        <span class="nombre_footer">Daniel Castañeda - Portfolio 2024</span>
+        <span class="nombre_footer">&copy; Daniel Castañeda - Portfolio 2024</span>
+        <hr / class="hr_final">
+        <a href="creditos.html" class="creditos">Créditos</a>
     </footer>
+    <script src="js.js"></script>
 </body>
 
 </html>
