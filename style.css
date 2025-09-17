@@ -213,6 +213,25 @@ nav {
     transform: scale(1.1);
 }
 
+.clase-button{
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
+    padding: 5px;
+    font-weight: 600;
+    background: transparent;
+    margin-top: 10px;
+    transition: 0.3s;
+    border: 2px solid white;
+    color: white;
+    margin-top: 35px;
+    font-size: 1em;
+}
+
+.clase-button:hover{
+    transform: scale(1.1);
+}
+
 .fila .col h3 {
     font-size: 1.4em;
     margin-bottom: 10px;
