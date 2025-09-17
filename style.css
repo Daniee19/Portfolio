@@ -214,7 +214,6 @@ nav {
 }
 
 .clase-button{
-    display: block;
     margin: 0 auto;
     cursor: pointer;
     padding: 5px;
@@ -879,7 +878,7 @@ footer .eldiv {
 
     /*Contacto*/
     .contacto .fila {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
         gap: 40px;
     }
 
