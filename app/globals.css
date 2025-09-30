@@ -1,0 +1,20 @@
+@import "tailwindcss";
+@theme {
+  --color-secondary: #f5741c;
+  --color-darkBg: #131424;
+  --background-gradient-cover: linear-gradient(90.21deg,
+      rgba(170, 54, 124, 0.5) -5.91%,
+      rgba(74, 47, 189, 0.5) 111.58%);
+}
+html,
+body {
+  color: #fff;
+  background: #1f1934;
+}
+
+main {
+  background: #393a47;
+  height: 100vh;
+  height: 100dvh;
+}
+
