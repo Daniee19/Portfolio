@@ -1,37 +1,77 @@
+/*Esto se hace explícitamente para que únicamente sea para movil*/
+@media (max-width: 768px) {
+    .home-socials span {
+        display: none;
+    }
+}
+
+/*Estilo base para movil*/
 .home-container {
     padding: 20px;
     text-align: center;
 }
 
+.home-container .flat {
+    font-weight: 200;
+}
+
 .me-img {
     border-radius: 50%;
-    margin: 10px 0;
 }
 
 .short-intro {
     font-size: 18px;
     color: black;
-    margin-bottom: 15px;
+    margin-bottom: 16px;
 }
 
 .home-links {
     padding-left: 20px;
     text-align: left;
-    margin-bottom: 25px;
-}   
+    margin-bottom: 22px;
+}
 
 .home-links li {
     list-style-type: "✔ ";
     margin-bottom: 8px;
 }
 
+.home-links .second {
+    display: none;
+}
+
+/*HOME-SOCIALS*/
+.home-socials .superior{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 34px;
+}
+
+.home-socials a {
+    text-decoration: none;
+    gap: 0.4rem;
+    color: #000;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.home-socials a:hover {
+    opacity: 0.7;
+}
+
+.home-socials .superior .line {
+    width: 60px;
+    height: 1px;
+    background-color: #000;
+}
+
 .home-buttons {
     margin-top: 15px;
     display: flex;
-    flex-direction: column;
     gap: 10px;
-    width: 150px;
-    margin: auto;
+    justify-content: center;
 }
 
 .home-buttons .first {
@@ -42,6 +82,8 @@
     cursor: pointer;
     font-size: 16px;
     border-radius: 25px;
+    font-weight: bold;
+    width: 100%;
 }
 
 .home-buttons .second {
@@ -50,13 +92,52 @@
     padding: 10px;
     cursor: pointer;
     font-size: 16px;
-
     border: none;
     border-bottom: 2px solid black;
+    font-weight: bold;
+    width: 100%;
 }
-.home-socials{
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 30px;
+
+.description {
+    display: none;
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 20px;
 }
+
+/*Diseño para tablet*/
+@media(min-width:768px) {
+    .home-container h1 {
+        font-size: 36px;
+    }
+
+    .home-container {
+        padding: 40px;
+    }
+
+    .description {
+        display: block;
+    }
+
+    .short-intro {
+        font-size: 22px;
+    }
+
+    .home-links {
+        font-size: 18px;
+        margin-bottom: 30px;
+    }
+
+    .home-links .second {
+        display: list-item;
+    }
+
+    /*BUTTONS*/
+    .home-buttons {
+        width: 50%;
+    }
+}
+
+
+    /*Diseño para Desktop*/
+    @media(min-width:1024px) {}

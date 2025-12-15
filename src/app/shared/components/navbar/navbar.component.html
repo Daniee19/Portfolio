@@ -12,7 +12,7 @@
         <!-- [class.open] ="isMenuOpen" es un binding, esto quiere decir que se va a agregar la
              clase 'open' a la clase nav-links, solo si isMenuOpen es true-->
         <ul class="nav-links" [class.open]="isMenuOpen">
-            <!--Cuando la ruta sea '/'' se va a activar el estilo 'active'-->
+            <!--Cuando la ruta sea '/' se va a activar el estilo 'active'-->
             <a routerLink="/home" routerLinkActive="active" (click)="closeMenu()">Home</a>
             <a routerLink="/skills" routerLinkActive="active" (click)="closeMenu()">Skills</a>
             <a routerLink="/projects" routerLinkActive="active" (click)="closeMenu()">Projects</a>

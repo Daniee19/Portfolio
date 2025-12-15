@@ -1,20 +1,49 @@
 <div class="home-container">
-    <h1>Hello! I'm Daniel</h1>
+
+    <h1><span class="flat">Hello!</span> I'm Daniel</h1>
     <img class="me-img" src="../../../assets/img/me.jpg" alt="me.jpg" width="200" />
-    <p class="short-intro">FullStack Developer <br />
+    <p class="short-intro">Full Stack Developer <br />
         Angular & Spring Boot</p>
+    <p class="description">I build complete <strong>web applications</strong> with a focus on <strong>clean
+            architecture</strong>,
+        scalable APIs, and <strong>modern frontend development</strong>.</p>
+
     <ul class="home-links">
-        <li>Real-world application development </li>
-        <li>Frontend and backend integration </li>
-        <li>Clean, readable, and maintainable code </li>
+        <li class="first">Real-world application development </li>
+        <li class="second">Frontend and backend integration </li>
+        <li class="third">Clean & scalable architecture </li>
     </ul>
+
     <div class="home-buttons">
         <button class="first">Let's talk</button>
         <button class="second">Download Cv <i class="fa-solid fa-arrow-down" style="color: #000000;"></i></button>
     </div>
+
     <div class="home-socials">
-        <i class="fa-brands fa-linkedin fa-xl" style="color: #000000;"></i>
-        <i class="fa-brands fa-github fa-xl" style="color: #000000;"></i>
-        <i class="fa-brands fa-youtube fa-xl" style="color: #000000;"></i>
+        <div class="superior">
+            <span class="line"></span>
+
+            <a href="https://linkedin.com/in/yoshua-daniel-cr" target="_blank" aria-label="LinkedIn">
+                <i class="fa-brands fa-linkedin fa-xl"></i>
+                <span> LinkedIn</span>
+            </a>
+
+            <a href="https://github.com/Daniee19" target="_blank" aria-label="GitHub">
+                <i class="fa-brands fa-github fa-xl"></i>
+                <span> GitHub</span>
+            </a>
+
+            <a href="https://youtube.com/@YoshTwoThousandFive" target="_blank" aria-label="YouTube">
+                <i class="fa-brands fa-youtube fa-xl"></i>
+                <span> YouTube</span>
+            </a>
+            <span class="line"></span>
+        </div>
+        <div class="inferior">
+            <a [href]="'mailto:'+email" target="_blank" aria_label="Email">
+                {{ email }}
+            </a>
+        </div>
+
     </div>
 </div>
