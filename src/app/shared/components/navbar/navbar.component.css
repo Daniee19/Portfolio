@@ -1,7 +1,7 @@
 /*Diseño base: Para móvil*/
 .navbar {
-    background: #0f172a;
-    color: white;
+    background: #ffffff;
+    color: rgb(0, 0, 0);
     padding: 1rem;
 }
 
@@ -15,13 +15,33 @@
     font-size: 1.5rem;
     font-weight: bold;
     text-decoration: none;
-    color: white;
+    color: rgb(0, 0, 0);
+    position: relative;
+}
+
+.navbar-brand::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right,
+            transparent,
+            #020617,
+            transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.navbar-brand:hover::after {
+    opacity: 1;
 }
 
 .menu-button {
     background: none;
     border: none;
-    color: white;
+    color: rgb(0, 0, 0);
     font-size: 1.5rem;
     cursor: pointer;
 }
@@ -43,7 +63,6 @@
     list-style: none;
     padding: 1rem;
     gap: 1rem;
-
 }
 
 .nav-links a {
