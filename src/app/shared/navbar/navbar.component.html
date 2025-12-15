@@ -1,0 +1,24 @@
+<nav class="navbar">
+    <div class="navbar-container">
+        <!-- LOGO -->
+        <a class="navbar-brand" routerLink="/">Daniel's Portfolio</a>
+
+        <!--Botón hamburguesa (solo móvil)-->
+        <button class="menu-button" (click)="toggleMenu()">
+            ☰
+        </button>
+
+        <!--LINKS-->
+        <!-- [class.open] ="isMenuOpen" es un binding, esto quiere decir que se va a agregar la
+             clase 'open' a la clase nav-links, solo si isMenuOpen es true-->
+        <ul class="nav-links" [class.open]="isMenuOpen">
+            <!--Cuando la ruta sea '/'' se va a activar el estilo 'active'-->
+            <a routerLink="/home" routerLinkActive="active" (click)="closeMenu()">Home</a>
+            <a routerLink="/skills" routerLinkActive="active" (click)="closeMenu()">Skills</a>
+            <a routerLink="/projects" routerLinkActive="active" (click)="closeMenu()">Projects</a>
+            <a routerLink="/contact" routerLinkActive="active" (click)="closeMenu()">Contact</a>
+        </ul>
+
+
+    </div>
+</nav>

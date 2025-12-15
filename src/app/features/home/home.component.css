@@ -1,0 +1,62 @@
+.home-container {
+    padding: 20px;
+    text-align: center;
+}
+
+.me-img {
+    border-radius: 50%;
+    margin: 10px 0;
+}
+
+.short-intro {
+    font-size: 18px;
+    color: black;
+    margin-bottom: 15px;
+}
+
+.home-links {
+    padding-left: 20px;
+    text-align: left;
+    margin-bottom: 25px;
+}   
+
+.home-links li {
+    list-style-type: "✔ ";
+    margin-bottom: 8px;
+}
+
+.home-buttons {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 150px;
+    margin: auto;
+}
+
+.home-buttons .first {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 25px;
+}
+
+.home-buttons .second {
+    background-color: white;
+    color: black;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+
+    border: none;
+    border-bottom: 2px solid black;
+}
+.home-socials{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+}

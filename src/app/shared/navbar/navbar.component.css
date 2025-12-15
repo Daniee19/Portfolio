@@ -1,0 +1,63 @@
+/*Diseño base: Para móvil*/
+.navbar {
+    background: #0f172a;
+    color: white;
+    padding: 1rem;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+}
+
+.menu-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/*Este active se activa cuando la ruta coincide con el nombre puesto en el routerLinkedActive*/
+.active {
+    color: #0d6efd;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    width: 100%;
+    background: #020617;
+    list-style: none;
+    padding: 1rem;
+    gap: 1rem;
+
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    padding: 0.5rem 0;
+}
+
+.nav-links.open {
+    display: flex;
+}
+
+/*Diseño para tablet*/
+@media(min-width:768px) {}
+
+/*Diseño para Desktop*/
+@media(min-width:1024px) {}
