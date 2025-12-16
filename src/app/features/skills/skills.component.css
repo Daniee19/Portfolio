@@ -1,0 +1,116 @@
+/*MOVIL*/
+.skills-container {
+    width: 80%;
+}
+
+.skills-container {
+    background-color: lightgray;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.skills-intro {
+    background-color: white;
+    padding: 20px 40px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+.skills-categories {
+    display: flex;
+    gap: 20px;
+    background-color: rgb(0, 0, 0);
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 40px;
+    margin-bottom: 10px;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    color: white;
+}
+
+.skills-categories:hover {
+    cursor: pointer;
+}
+
+.skill-item img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.skills-categories>a.active {
+    text-decoration: underline;
+}
+
+.skills-view {
+    background-color: white;
+    padding: 20px 40px;
+    width: 100%;
+}
+
+.skills-view>section {
+    display: none;
+}
+
+.skills-view>section.active {
+    display: block;
+}
+
+.skills-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.li-items {
+    display: flex;
+    justify-content: center;
+}
+
+.skill-item {
+    display: flex;
+    padding: 5px 10px;
+    background-color: rgb(205, 205, 205);
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 120px;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.skill-item:hover {
+    background-color: rgb(150, 150, 150);
+    cursor: pointer;
+}
+
+/*TABLET*/
+@media (min-width: 768px) {
+    .skills-container {
+        width: 90%;
+    }
+}
+
+/*PC*/
+@media (min-width: 1024px) {
+    .skills-container h2 {
+        font-size: 48px;
+        font-weight: bold;
+        text-align: center;
+    }
+}

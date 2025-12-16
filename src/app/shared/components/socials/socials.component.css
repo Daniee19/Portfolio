@@ -1,0 +1,54 @@
+.socials {
+    position: absolute;
+    bottom: 30px;
+    margin: auto;
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.socials span {
+    display: none;
+}
+
+.socials .superior {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 52px;
+}
+
+.socials .superior .line {
+    width: 60px;
+    height: 1px;
+    background-color: #000;
+}
+
+.socials a {
+    text-decoration: none;
+    gap: 0.4rem;
+    color: #000;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.socials a:hover {
+    opacity: 0.7;
+}
+
+/*Diseño para tablet*/
+@media(min-width:768px) {
+    .socials span {
+        display: block;
+    }
+}
+
+@media(min-width:1024px) {
+    .socials a {
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+}

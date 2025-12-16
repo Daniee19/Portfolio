@@ -1,11 +1,16 @@
-/*Esto se hace explícitamente para que únicamente sea para movil*/
-@media (max-width: 768px) {
-    .home-socials span {
-        display: none;
-    }
+/*Estilo base para movil*/
+
+.me-img-1 {
+    display: inline-block;
+    border-radius: 50%;
+    width: 200px;
+    margin: auto;
 }
 
-/*Estilo base para movil*/
+.me-img-2 {
+    display: none;
+}
+
 .home-container {
     padding: 20px;
     text-align: center;
@@ -13,10 +18,6 @@
 
 .home-container .flat {
     font-weight: 200;
-}
-
-.me-img {
-    border-radius: 50%;
 }
 
 .short-intro {
@@ -40,38 +41,13 @@
     display: none;
 }
 
-/*HOME-SOCIALS*/
-.home-socials .superior{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 34px;
-}
-
-.home-socials a {
-    text-decoration: none;
-    gap: 0.4rem;
-    color: #000;
-    text-decoration: none;
-    font-weight: 500;
-}
-
-.home-socials a:hover {
-    opacity: 0.7;
-}
-
-.home-socials .superior .line {
-    width: 60px;
-    height: 1px;
-    background-color: #000;
-}
-
+/*BUTTONS*/
 .home-buttons {
     margin-top: 15px;
     display: flex;
-    gap: 10px;
+    gap: 16px;
     justify-content: center;
+    margin: auto;
 }
 
 .home-buttons .first {
@@ -83,7 +59,14 @@
     font-size: 16px;
     border-radius: 25px;
     font-weight: bold;
+    text-align: center;
+    text-decoration: none;
     width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.home-buttons .first:hover {
+    background-color: #333;
 }
 
 .home-buttons .second {
@@ -93,16 +76,24 @@
     cursor: pointer;
     font-size: 16px;
     border: none;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid rgb(49, 49, 49);
     font-weight: bold;
+    text-align: center;
     width: 100%;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.home-buttons .second:hover {
+    scale: 1.05;
 }
 
 .description {
     display: none;
     font-size: 20px;
     color: #333;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    max-width: 550px;
 }
 
 /*Diseño para tablet*/
@@ -125,7 +116,7 @@
 
     .home-links {
         font-size: 18px;
-        margin-bottom: 30px;
+        margin-bottom: 32px;
     }
 
     .home-links .second {
@@ -134,10 +125,39 @@
 
     /*BUTTONS*/
     .home-buttons {
-        width: 50%;
+        width: 60%;
     }
 }
 
 
-    /*Diseño para Desktop*/
-    @media(min-width:1024px) {}
+/*Diseño para Desktop*/
+@media(min-width:1024px) {
+    .me-img-1 {
+        display: none;
+    }
+
+    .me-img-2 {
+        display: inline-block;
+        width: 400px;
+        border-radius: 50%;
+        margin: auto;
+    }
+    .home-container {
+        padding: 100px;
+    }
+    .home-hero{
+        display:flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 40px;
+        width:fit-content;
+        margin:auto;
+    }
+    .home-intro{
+        text-align: left;
+    }
+    
+    .home-intro h1 {
+        font-size: 48px;
+    }
+}
