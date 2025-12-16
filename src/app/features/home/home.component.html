@@ -1,49 +1,28 @@
 <div class="home-container">
+    <div class="home-hero">
+        <div class="home-intro">
+            <h1><span class="flat">Hello!</span> I'm Daniel <i class="fa-solid fa-star"></i></h1>
+            <img class="me-img-1" src="../../../assets/img/me.jpg" alt="me.jpg" />
+            <p class="short-intro">Full Stack Developer - Angular & Spring Boot</p>
+            <p class="description">I build complete <strong>web applications</strong> with a focus on <strong>clean
+                    architecture</strong>,
+                scalable APIs, and <strong>modern frontend development</strong>.</p>
 
-    <h1><span class="flat">Hello!</span> I'm Daniel</h1>
-    <img class="me-img" src="../../../assets/img/me.jpg" alt="me.jpg" width="200" />
-    <p class="short-intro">Full Stack Developer <br />
-        Angular & Spring Boot</p>
-    <p class="description">I build complete <strong>web applications</strong> with a focus on <strong>clean
-            architecture</strong>,
-        scalable APIs, and <strong>modern frontend development</strong>.</p>
+            <ul class="home-links">
+                <li class="first">Real-world application development </li>
+                <li class="second">Frontend and backend integration </li>
+                <li class="third">Clean & scalable architecture </li>
+            </ul>
 
-    <ul class="home-links">
-        <li class="first">Real-world application development </li>
-        <li class="second">Frontend and backend integration </li>
-        <li class="third">Clean & scalable architecture </li>
-    </ul>
-
-    <div class="home-buttons">
-        <button class="first">Let's talk</button>
-        <button class="second">Download Cv <i class="fa-solid fa-arrow-down" style="color: #000000;"></i></button>
-    </div>
-
-    <div class="home-socials">
-        <div class="superior">
-            <span class="line"></span>
-
-            <a href="https://linkedin.com/in/yoshua-daniel-cr" target="_blank" aria-label="LinkedIn">
-                <i class="fa-brands fa-linkedin fa-xl"></i>
-                <span> LinkedIn</span>
-            </a>
-
-            <a href="https://github.com/Daniee19" target="_blank" aria-label="GitHub">
-                <i class="fa-brands fa-github fa-xl"></i>
-                <span> GitHub</span>
-            </a>
-
-            <a href="https://youtube.com/@YoshTwoThousandFive" target="_blank" aria-label="YouTube">
-                <i class="fa-brands fa-youtube fa-xl"></i>
-                <span> YouTube</span>
-            </a>
-            <span class="line"></span>
+            <div class="home-buttons">
+                <a class="first" routerLink="/contact">Let's talk</a>
+                <a [href]="cv" download="CV-Daniel-Castaneda-Ing-Sistemas" class="second">Download Cv
+                    <i class="fa-solid fa-arrow-down"></i>
+                </a>
+            </div>
         </div>
-        <div class="inferior">
-            <a [href]="'mailto:'+email" target="_blank" aria_label="Email">
-                {{ email }}
-            </a>
-        </div>
-
+        <img class="me-img-2" src="../../../assets/img/me.jpg" alt="me.jpg" />
     </div>
+    <app-socials></app-socials>
+
 </div>

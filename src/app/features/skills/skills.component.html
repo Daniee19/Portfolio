@@ -1,1 +1,50 @@
-<p>skills works!</p>
+<div class="skills-container">
+    <div class="skills-intro">
+        <h2>Skills</h2>
+        <div class="skills-categories">
+            <a (click)="setCategory('frontend')" [class.active]="inicial === 'frontend'">Frontend</a>
+            <a (click)="setCategory('backend')" [class.active]="inicial === 'backend'">Backend</a>
+            <a (click)="setCategory('tools')" [class.active]="inicial === 'tools'">Tools</a>
+        </div>
+
+        <div class="skills-view">
+            <!-- * Si cumple 'inicial' es igual a 'frontend', poneme esa clasecita llamada .active-->
+            <section [class.active]="inicial === 'frontend'">
+                <ul class="skills-list">
+                    <li class="li-items" *ngFor="let a of skills.frontend">
+                        <div class="skill-item">
+                            <img src="{{a.url}}" alt="{{a.name}} logo" />
+                            {{a.name}}
+                        </div>
+                    </li>
+
+                </ul>
+            </section>
+
+            <section [class.active]="inicial === 'backend'">
+                <ul class="skills-list">
+                    <li class="li-items" *ngFor="let a of skills.backend">
+                        <div class="skill-item">
+                            <img src="{{a.url}}" alt="{{a.name}} logo" />
+                            {{a.name}}
+                        </div>
+                    </li>
+
+                </ul>
+            </section>
+
+            <section [class.active]="inicial === 'tools'">
+                <ul class="skills-list">
+                    <li class="li-items" *ngFor="let a of skills.tools">
+                        <div class="skill-item">
+                            <img src="{{a.url}}" alt="{{a.name}} logo" />
+                            {{a.name}}
+                        </div>
+                    </li>
+
+                </ul>
+            </section>
+        </div>
+
+    </div>
+</div>
