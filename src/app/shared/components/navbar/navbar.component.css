@@ -57,6 +57,7 @@
     list-style: none;
     padding: 1rem;
     gap: 1rem;
+    z-index: 99;
 }
 
 .nav-links a {
@@ -79,9 +80,10 @@
 
 /*Diseño para Desktop*/
 @media(min-width:1024px) {
-    .navbar{
+    .navbar {
         padding: 1rem 6.1rem;
     }
+
     .nav-links {
         background-color: transparent;
         display: flex !important;

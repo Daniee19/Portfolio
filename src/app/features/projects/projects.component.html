@@ -1,1 +1,64 @@
-<p>projects works!</p>
+<div class="projects-container">
+
+    <section class="filtros-section" [class.active]="defecto === true">
+        <h2>Filters</h2>
+
+        <div class="filtros-seleccionados" id="filtros_seleccionados">
+            <!-- <div class="item-seleccionado">
+                Angular
+            </div> -->
+        </div>
+
+
+        <div class="filtros-disponibles">
+            <h3>Frontend</h3>
+            <ul>
+                <li *ngFor="let filter of filters.frontend">
+                    <div class="filter-item" (click)="selectFilter(filter.name)">
+                        {{ filter.name }}
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="filtros-disponibles">
+            <h3>Backend</h3>
+            <ul>
+                <li *ngFor="let filter of filters.backend">
+                    <div class="filter-item" (click)="selectFilter(filter.name)">
+                        {{ filter.name }}
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="filtros-disponibles">
+            <h3>Tools</h3>
+            <ul>
+                <li *ngFor="let filter of filters.tools">
+                    <div class="filter-item" (click)="selectFilter(filter.name)">
+                        {{ filter.name }}
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="projects-section">
+        <div class="projects-intro">
+            <h2>Projects</h2>
+            <a class="arrow-icon" (click)="setBurger()">
+                <i class="fa-solid fa-angles-right fa-xl"></i>
+            </a>
+        </div>
+        <div class="only-projects">
+            <div class="project-list">
+                <div class="project-item" *ngFor="let project of projects">
+                    <h3>{{ project.name }}</h3>
+                    <p>{{ project.description }}</p>
+                    <a [href]="project.link" target="_blank">View Project</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

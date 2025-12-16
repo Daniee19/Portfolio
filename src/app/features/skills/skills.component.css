@@ -99,6 +99,36 @@
     cursor: pointer;
 }
 
+.skills-list {
+    grid-template-columns: 1fr;
+}
+
+.skills-intro {
+    padding: 0px;
+}
+
+@media (min-width: 328px) {
+    .skills-list {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 480px) {
+    .skills-list {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .skills-intro {
+        padding: 20px 40px;
+    }
+}
+
+@media (min-width: 680px) {
+    .skills-list {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
 /*TABLET*/
 @media (min-width: 768px) {
     .skills-container {
@@ -112,5 +142,15 @@
         font-size: 48px;
         font-weight: bold;
         text-align: center;
+    }
+
+    .skills-list {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
+@media (min-width: 1200px) {
+    .skills-container {
+        width: 70%;
     }
 }

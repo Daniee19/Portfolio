@@ -1,0 +1,91 @@
+.projects-container {
+    display: flex;
+    width: 100%;
+    gap: 20px;
+    background-color: brown;
+    position: relative;
+    margin: auto;
+}
+
+.filtros-section {
+    background-color: lightgray;
+    padding: 10px;
+    width: 80%;
+    position: absolute;
+}
+
+.filtros-disponibles>ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.projects-section {
+    background-color: lightblue;
+    width: 100%;
+    padding: 1rem;
+
+}
+
+.filtros-seleccionados {
+    background-color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.item-seleccionado {
+    background-color: lightgreen;
+    padding: 5px;
+    margin: 5px 0px;
+    cursor: pointer;
+}
+
+.filtros-disponibles {
+    background-color: white;
+    padding: 10px;
+}
+
+.filtros-section {
+    display: none;
+}
+
+.filtros-section.active {
+    display: block;
+
+
+}
+
+.projects-intro {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    background-color: white;
+}
+
+@media (min-width: 768px) {
+    .projects-container {
+        flex-direction: row;
+    }
+
+    .filtros-section {
+        display: block;
+        width: 250px;
+        position: relative;
+    }
+
+    .projects-section {
+        flex: 1;
+    }
+
+    .arrow-icon {
+        display: none;
+    }
+}
+
+@media (min-width: 1024px) {
+    .projects-container {
+        width: 80%;
+    }
+
+}
