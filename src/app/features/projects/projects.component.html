@@ -4,17 +4,18 @@
         <h2>Filters</h2>
 
         <div class="filtros-seleccionados" id="filtros_seleccionados">
-            <!-- <div class="item-seleccionado">
-                Angular
-            </div> -->
+            <div class="item-seleccionado" *ngFor="let filter of selectedTechnologies"
+                (click)="unSelectedFilter(filter)">
+                {{ filter.name }}
+            </div>
         </div>
 
-
+        <hr />
         <div class="filtros-disponibles">
             <h3>Frontend</h3>
             <ul>
                 <li *ngFor="let filter of filters.frontend">
-                    <div class="filter-item" (click)="selectFilter(filter.name)">
+                    <div class="filter-item" (click)="selectFilter(filter)">
                         {{ filter.name }}
                     </div>
                 </li>
@@ -25,7 +26,7 @@
             <h3>Backend</h3>
             <ul>
                 <li *ngFor="let filter of filters.backend">
-                    <div class="filter-item" (click)="selectFilter(filter.name)">
+                    <div class="filter-item" (click)="selectFilter(filter)">
                         {{ filter.name }}
                     </div>
                 </li>
@@ -36,7 +37,7 @@
             <h3>Tools</h3>
             <ul>
                 <li *ngFor="let filter of filters.tools">
-                    <div class="filter-item" (click)="selectFilter(filter.name)">
+                    <div class="filter-item" (click)="selectFilter(filter)">
                         {{ filter.name }}
                     </div>
                 </li>
@@ -57,6 +58,12 @@
                     <h3>{{ project.name }}</h3>
                     <p>{{ project.description }}</p>
                     <a [href]="project.link" target="_blank">View Project</a>
+                    <div class="project-technologies">
+                        <span *ngFor="let tech of project.tecnologias" class="tech-badge">
+                            {{ tech }}
+                        </span>
+
+                    </div>
                 </div>
             </div>
         </div>

@@ -8,10 +8,11 @@
 }
 
 .filtros-section {
-    background-color: lightgray;
+    background-color: rgb(255, 255, 255);
     padding: 10px;
     width: 80%;
     position: absolute;
+    font-size: 14px;
 }
 
 .filtros-disponibles>ul {
@@ -30,14 +31,16 @@
 .filtros-seleccionados {
     background-color: white;
     padding: 10px;
-    margin-bottom: 10px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
 .item-seleccionado {
     background-color: lightgreen;
-    padding: 5px;
-    margin: 5px 0px;
+    padding: 4px 10px;
     cursor: pointer;
+    width: fit-content
 }
 
 .filtros-disponibles {
@@ -51,8 +54,6 @@
 
 .filtros-section.active {
     display: block;
-
-
 }
 
 .projects-intro {
@@ -61,6 +62,20 @@
     align-items: center;
     margin-bottom: 10px;
     background-color: white;
+}
+
+/**/
+.project-technologies{
+    background-color: red;
+    display: flex;
+    gap: 5px;
+}
+
+.tech-badge{
+    background-color: yellow;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 12px;
 }
 
 @media (min-width: 768px) {
