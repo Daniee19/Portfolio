@@ -1,8 +1,13 @@
 <div class="projects-container">
 
     <section class="filtros-section" [class.active]="defecto === true">
-        <h2>Filters</h2>
-
+        <div class="filtros-header">
+            <h2>Filters</h2>
+            <div class="icons-header">
+                <i class="fa-solid fa-trash-can fa-xl" (click)="deleteAllFilters()"></i>
+                <i class="fa-solid fa-x fa-xl" (click)="setBurger()" class="x-icon"></i>
+            </div>
+        </div>
         <div class="filtros-seleccionados" id="filtros_seleccionados">
             <div class="item-seleccionado" *ngFor="let filter of selectedTechnologies"
                 (click)="unSelectedFilter(filter)">
