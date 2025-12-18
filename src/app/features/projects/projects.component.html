@@ -1,11 +1,15 @@
 <div class="projects-container">
-
+    <!--BACKDROP-->
+    <div class="backdrop" 
+    *ngIf="defecto" 
+    (click)="setBurger()"> 
+    </div>
     <section class="filtros-section" [class.active]="defecto === true">
         <div class="filtros-header">
             <h2>Filters</h2>
             <div class="icons-header">
                 <i class="fa-solid fa-trash-can fa-xl" (click)="deleteAllFilters()"></i>
-                <i class="fa-solid fa-x fa-xl" (click)="setBurger()" class="x-icon"></i>
+                <i class="fa-solid fa-x fa-xl x-icon" (click)="setBurger()"></i>
             </div>
         </div>
         <div class="filtros-seleccionados" id="filtros_seleccionados">
@@ -58,11 +62,36 @@
             </a>
         </div>
         <div class="only-projects">
-            <div class="project-list">
-                <div class="project-item" *ngFor="let project of projects">
-                    <h3>{{ project.name }}</h3>
-                    <p>{{ project.description }}</p>
-                    <a [href]="project.link" target="_blank">View Project</a>
+            <!-- 🧠 Respuesta corta (para que te quedes tranquilo) (sobre como funciona el @listAnimation)
+
+            :enter se dispara cuando un elemento aparece en el DOM
+            :leave se dispara cuando un elemento se elimina del DOM
+
+            push() y filter() solo provocan esos cambios
+
+            👉 Angular no escucha métodos, escucha el DOM. -->
+            <div class="project-card" *ngFor="let project of projects" @listAnimation>
+
+                <div class="project-image">
+
+                    <img [src]="project.urlPhoto" [alt]="project.name + ' preview'" />
+
+                    <!-- Overlay -->
+                    <div class="image-overlay">
+                        <a [href]="project.link" target="_blank" class="overlay-btn primary">
+                            Live
+                        </a>
+
+                        <a [href]="project.link" target="_blank" class="overlay-btn secondary">
+                            Code
+                        </a>
+                    </div>
+
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">{{ project.name }}</h3>
+                    <p class="project-description">{{ project.description }}</p>
+
                     <div class="project-technologies">
                         <span *ngFor="let tech of project.tecnologias" class="tech-badge">
                             {{ tech }}
