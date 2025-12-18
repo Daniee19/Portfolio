@@ -2,6 +2,15 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SKILLS } from '../skills/skills.data';
 import { PROJECTS } from './projects.data';
+
+// Importar funciones de animación si es necesario
+import {
+  trigger,
+  transition,
+  style,
+  animate
+} from '@angular/animations';
+
 type SkillCategory = 'frontend' | 'backend' | 'tools';
 interface Skill {
   name: string;
@@ -10,16 +19,44 @@ interface Skill {
   category: SkillCategory;
 }
 
+
+
 @Component({
   selector: 'app-projects',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './projects.component.html',
-  styleUrl: './projects.component.css'
+  styleUrl: './projects.component.css',
+  animations: [
+    trigger('listAnimation', [
+
+      transition(':enter', [
+        style({
+          opacity: 0,
+          transform: 'translateY(15px) scale(.95)'
+        }),
+        animate('250ms ease-out', style({
+          opacity: 1,
+          transform: 'translateY(0) scale(1)'
+        }))
+      ]),
+
+      transition(':leave', [
+        animate('200ms ease-in', style({
+          opacity: 0,
+          transform: 'translateY(-10px) scale(.95)'
+        }))
+      ])
+
+    ])
+  ]
 })
 
 
 export class ProjectsComponent {
+
+  
+
   constructor() {
     console.log('🆕 componente creado');
   }
