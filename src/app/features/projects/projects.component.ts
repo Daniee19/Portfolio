@@ -37,6 +37,10 @@ export class ProjectsComponent {
   //* Unir todas las tecnologías de todos los proyectos en un solo array
   allNombresTecnologias = this.allProjects.flatMap(project => project.tecnologias);
 
+  //LO QUE SE MUESTRA EN PANTALLA
+  //? Copia de todos los proyectos
+  projects = [...this.allProjects];
+
   //*Copia inicial de SKILLS
   //!Comparar con las tecnologías usadas en los proyectos y filtrar solo las que se usan en los proyectos
   //? Filters permitirá manejar tanto la sección de abajo de filtros disponibles como la de filtros seleccionados
@@ -47,11 +51,6 @@ export class ProjectsComponent {
     backend: [...SKILLS.backend.filter(s => this.allNombresTecnologias.includes(s.name))],
     tools: [...SKILLS.tools.filter(s => this.allNombresTecnologias.includes(s.name))]
   };
-
-  //LO QUE SE MUESTRA EN PANTALLA
-  //? Copia de todos los proyectos
-  projects = [...this.allProjects];
-
   deleteAllFilters() {
     //Se resetean los filtros a su estado inicial
     this.filters = {
@@ -63,26 +62,58 @@ export class ProjectsComponent {
     this.applyFilters();
   }
 
-  applyFilters() {
-    //Si no hay filtros seleccionados, mostrar todos los proyectos
-    if (this.selectedTechnologies.length === 0) {
-      return this.projects = [...this.allProjects];
-    }
+  //Actualizar los filtros disponibles según los proyectos visibles
+  updateAvailableFilters() {
+    // 1. Obtener tecnologías usadas SOLO en proyectos visibles
+    const techSet = new Set<string>();
 
-    //Si está por ejemplo Java en selectedTechnologies y un proyecto tiene Java, entonces se muestra
-    //Sino no se muestra porque va a buscar en el selectedTechnologies y daría false, ya que se usa un some para verificarlo
-    const selectedNames = this.selectedTechnologies.map(skill => skill.name);
-
-    //* Se recorre la lista original de proyectos y se filtran aquellos
-    //* cuya lista de tecnologías contenga al menos una tecnología seleccionada por el usuario
-
-
-    //? Es decir que si el this.allProjects.filter(project => es "true") entonces se sigue manteniento, y si es false se oculta, esta es otra forma, en lugar de hacer la comparación * filter(s => s !== skill) * que es similar en cuanto a logica de true o false
-    return this.projects = this.allProjects.filter(project =>
-      project.tecnologias.some(tech => selectedNames.includes(tech))
+    //*Esto es vital, porque si borro todos los filtros -> tendré todos los proyectos -> y por ende todas las tecnologías
+    this.projects.forEach(project =>
+      project.tecnologias.forEach(tech => techSet.add(tech))
     );
+
+    // 2. Refiltrar SKILLS según ese set
+    //Practicamente lo clave aquí es el has() que verifica si el nombre de la tecnologia de los proyectos 
+    //*Practicamente es el texto de tecnologías en vertical que se muestra al lado izquierdo
+    //Esto cambia cada vez que se aplica un filtro
+    this.filters = {
+      frontend: SKILLS.frontend.filter(
+        s =>
+          techSet.has(s.name) &&
+          !this.selectedTechnologies.some(sel => sel.name === s.name)
+      ),
+      backend: SKILLS.backend.filter(
+        s =>
+          techSet.has(s.name) &&
+          !this.selectedTechnologies.some(sel => sel.name === s.name)
+      ),
+      tools: SKILLS.tools.filter(
+        s =>
+          techSet.has(s.name) &&
+          !this.selectedTechnologies.some(sel => sel.name === s.name)
+      )
+    };
   }
 
+
+  applyFilters() {
+    //*Si no hay filtros seleccionados, mostrar todos los proyectos
+    if (this.selectedTechnologies.length === 0) {
+      this.projects = [...this.allProjects];
+      return this.updateAvailableFilters();
+    }
+
+    //*AND incremental
+    //? Es decir que si el this.allProjects.filter(project => es "true") entonces se sigue manteniento, y si es false se oculta, esta es otra forma, en lugar de hacer la comparación * filter(s => s !== skill) * que es similar en cuanto a logica de true o false
+    this.projects = this.allProjects.filter(project =>
+      //*Array chico 
+      this.selectedTechnologies.every(sel =>
+        //*Array grande
+        project.tecnologias.includes(sel.name))
+    )
+
+    return this.updateAvailableFilters();
+  }
   selectFilter(skill: Skill) {
     // Se está creando un nuevo array sin el skill seleccionado //Si son diferentes que se muestre, sino que se borre
     this.filters[skill.category] = this.filters[skill.category].filter(s => s !== skill);
