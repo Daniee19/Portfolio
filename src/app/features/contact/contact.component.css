@@ -1,0 +1,140 @@
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    gap: 10px;
+}
+
+.contact-container .contact-title {
+    font-size: 1.5rem;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.contact-title span {
+    color: gray;
+}
+
+.contact-name-email {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    justify-content: center;
+    width: 100%;
+    flex-direction: column;
+}
+
+.name-items,
+.email-items,
+.contact-items {
+    display: flex;
+    flex-direction: column;
+}
+
+.name-items input,
+.email-items input,
+.contact-items textarea {
+    padding: 10px;
+    border: 0px;
+    border-bottom: 1px solid gray;
+}
+
+.contact-items textarea {
+    height: 100px;
+}
+
+.options {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.options button {
+    border: 1px solid #ccc;
+    background: transparent;
+
+    padding: 6px 12px;
+
+    border-radius: 4px;
+
+    font-weight: 500;
+    color: #444;
+
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.options button:hover {
+    border-color: #000;
+    color: #000;
+}
+
+.options button.active {
+    background: #000;
+    color: #fff;
+    border-color: #000;
+}
+
+/* .contact-submit {
+    border: 1px solid #737373;
+    background: transparent;
+    padding: 4px 10px;
+    cursor: pointer;
+    margin-top:20px;
+    font-weight: 600;
+} */
+
+/*BOTÓN DE SUBMIT*/
+.contact-submit {
+    margin-top: 24px;
+    padding: 12px 24px;
+
+    background: #111;
+    /* sólido */
+    color: #fff;
+
+    border: none;
+    border-radius: 6px;
+
+    font-weight: 600;
+    letter-spacing: 0.5px;
+
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.contact-submit:hover {
+    background: #000;
+    transform: translateY(-1px);
+}
+
+.contact-submit:active {
+    transform: translateY(0);
+}
+
+.contact-submit:disabled {
+    background: #ccc;
+    color: #777;
+    cursor: not-allowed;
+}
+
+
+
+.error {
+    color: #ef5e5e;
+    font-style: italic;
+}
+.contact-last{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap:6px;
+}
+.recordatory {
+    color:gray;
+    font-size: 0.9rem;
+}

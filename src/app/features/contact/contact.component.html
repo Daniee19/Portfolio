@@ -1,1 +1,61 @@
-<p>contact works!</p>
+<div class="contact-container">
+    <div class="contact-title">
+        <h2><span>Say Helloo!</span> and tell me about your idea <i class="fa-solid fa-star"></i></h2>
+    </div>
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+        <div class="contact-name-email">
+            <div class="contact-name">
+                <div class="name-items">
+                    <label for="name">Name:*</label>
+                    <input id="name" type="text" formControlName="name" />
+                </div>
+                <div *ngIf="contactForm.get('name')?.invalid 
+            && contactForm.get('name')?.touched" class="error">
+                    Name is required
+                </div>
+            </div>
+            <div class="contact-email">
+                <div class="email-items">
+                    <label for="email">Email:*</label>
+                    <input id="email" type="email" formControlName="email" />
+                </div>
+                <div *ngIf="contactForm.get('email')?.invalid 
+            && contactForm.get('email')?.touched" class="error">
+                    Email is required
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-topic">
+            <h3>What's your mind?*</h3>
+            <div class="options">
+                <button type="button" *ngFor="let option of options" (click)="selectOption(option)"
+                    [class.active]="contactForm.get('topic')?.value === option">
+                    {{ option }}
+                </button>
+            </div>
+
+            <small *ngIf="contactForm.get('topic')?.invalid 
+               && contactForm.get('topic')?.touched" class="error">
+                Please select one option
+            </small>
+        </div>
+
+        <div class="contact-message">
+            <div class="contact-items">
+                <label for="message">Details:*</label>
+                <textarea id="message" formControlName="message"></textarea>
+            </div>
+            <div *ngIf="contactForm.get('message')?.invalid 
+            && contactForm.get('message')?.touched" class="error">
+                Details are required
+            </div>
+        </div>
+        <div class="contact-last">
+            <button type="submit" [disabled]="contactForm.invalid" class="contact-submit">
+                Send Message →
+            </button>
+            <span class="recordatory">I'll must get back to you within 24 hours </span>
+        </div>
+    </form>
+</div>
