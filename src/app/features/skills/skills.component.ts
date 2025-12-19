@@ -13,7 +13,6 @@ export class SkillsComponent {
   inicial = "frontend";
 
   setCategory(category: string) {
-    console.log(category);
     this.inicial = category;
   }
 

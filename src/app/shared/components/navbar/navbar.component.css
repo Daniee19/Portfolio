@@ -1,7 +1,7 @@
 /*Diseño base: Para móvil*/
 .navbar {
-    background: #ffffff;
-    color: rgb(0, 0, 0);
+    background: #000000;
+    color: rgb(255, 255, 255);
     padding: 1rem;
 }
 
@@ -15,7 +15,7 @@
     font-size: 1.5rem;
     font-weight: bold;
     text-decoration: none;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     position: relative;
 }
 
@@ -41,7 +41,7 @@
 .menu-button {
     background: none;
     border: none;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     font-size: 1.5rem;
     cursor: pointer;
 }
@@ -91,13 +91,13 @@
         flex-direction: row;
         width: auto;
         padding: 0;
-        color: black !important;
+        color: rgb(255, 255, 255) !important;
         gap: 2rem;
         padding: 4px 10px;
     }
 
     .nav-links a {
-        color: black;
+        color: rgb(255, 255, 255);
     }
 
     .menu-button {
