@@ -4,7 +4,7 @@
 }
 
 .skills-container {
-    background-color: lightgray;
+    background-color: rgb(255, 255, 255);
     margin: 0 auto;
     padding: 20px;
     display: flex;
@@ -66,10 +66,10 @@
 
 .skills-list {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 16px;
+    padding: 0;
+    list-style: none;
 }
 
 .li-items {
@@ -77,11 +77,11 @@
     justify-content: center;
 }
 
-.skill-item {
+/* .skill-item {
     display: flex;
+    flex-direction: column;
     padding: 5px 10px;
     background-color: rgb(205, 205, 205);
-    flex-direction: column;
     text-align: center;
     align-items: center;
     justify-content: center;
@@ -92,12 +92,90 @@
     font-weight: bold;
     font-size: 14px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+} */
+
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    padding: 16px 12px;
+    background: #0f0f0f;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    border: 1px solid #1f1f1f;
+    color: #e5e5e5;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: default;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+    position: relative;
+    overflow: hidden;
+    width: 120px;
+    height:120px;
+    gap:8px;
+    /*Esto es clave para el brillo*/
+}
+
+.skill-item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+
+    background: linear-gradient(120deg,
+            transparent,
+            rgba(255, 255, 255, 0.35),
+            transparent);
+
+    transform: skewX(-20deg);
+    opacity: 0;
+}
+
+.skill-item:hover::after {
+    animation: shine 0.8s ease;
+    opacity: 1;
+}
+
+@keyframes shine {
+    from {
+        left: -75%;
+    }
+
+    to {
+        left: 125%;
+    }
+}
+
+
+.skill-item img {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+    margin-bottom: 8px;
+    filter: grayscale(100%);
+    transition: filter 0.2s ease, transform 0.2s ease;
 }
 
 .skill-item:hover {
-    background-color: rgb(150, 150, 150);
-    cursor: pointer;
+    transform: translateY(-4px);
+    border-color: #3b82f6;
+    box-shadow:
+        0 8px 20px rgba(59, 130, 246, 0.15),
+        0 0 12px rgba(59, 130, 246, 0.25);
+}   
+
+.skill-item:hover img {
+    filter: grayscale(0%);
+    transform: scale(1.05);
 }
+
+
+
 
 .skills-list {
     grid-template-columns: 1fr;
