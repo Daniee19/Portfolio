@@ -20,7 +20,7 @@
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
     justify-content: center;
     width: 100%;
     flex-direction: column;
@@ -50,7 +50,7 @@
     gap: 10px;
     flex-wrap: wrap;
     justify-content: center;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
 }
 
 .options button {
@@ -122,19 +122,51 @@
     cursor: not-allowed;
 }
 
-
-
 .error {
     color: #ef5e5e;
     font-style: italic;
 }
-.contact-last{
+
+.contact-last {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap:6px;
+    gap: 6px;
 }
+
 .recordatory {
-    color:gray;
+    color: gray;
     font-size: 0.9rem;
+}
+
+@media(min-width:642px) {
+    .contact-name-email {
+        flex-direction: row;
+        width: 100%;
+        flex-wrap: nowrap;
+    }
+
+    .contact-email,
+    .contact-name {
+        width: 100%;
+    }
+}
+
+@media(min-width:1024px) {
+    .contact-title {
+        text-align: center;
+    }
+
+    form {
+        padding: 0% 10%;
+        width: 70%;
+    }
+}
+
+@media(min-width:1200px) {
+    .contact-title h2 {
+        font-size: 46px;
+        width: 50%;
+        margin: auto;
+    }
 }
