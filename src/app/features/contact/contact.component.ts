@@ -3,6 +3,8 @@ import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { environment } from '../../../environments/environments';
+import emailjs from 'emailjs-com';
 
 @Component({
   selector: 'app-contact',
@@ -13,7 +15,7 @@ import { CommonModule } from '@angular/common';
 })
 export class ContactComponent implements OnInit {
   options = [
-    "Website design", "Backend development", "Full Stack developmente", "Other"
+    "Website design", "Backend development", "Full Stack development", "Other"
   ]
 
   selectOption(option: string) {
@@ -39,7 +41,28 @@ export class ContactComponent implements OnInit {
     })
   }
   onSubmit() {
-    alert('Form submitted!');
+    if (this.contactForm.invalid) return;
+
+    const templateParams = {
+      name: this.contactForm.value.name,
+      email: this.contactForm.value.email,
+      message: this.contactForm.value.message,
+      topic: this.contactForm.value.topic
+    };
+
+    emailjs.send(
+      environment.emailJsServiceId,
+      environment.emailJsTemplateId,
+      templateParams,
+      environment.emailJsPublicKey
+    )
+      .then(() => {
+        alert('Message sent successfully!');
+        this.contactForm.reset();
+      })
+      .catch(() => {
+        alert('Something went wrong. Try again.');
+      });
   }
 
 }
