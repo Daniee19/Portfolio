@@ -77,23 +77,6 @@
     justify-content: center;
 }
 
-/* .skill-item {
-    display: flex;
-    flex-direction: column;
-    padding: 5px 10px;
-    background-color: rgb(205, 205, 205);
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    width: 120px;
-    height: 120px;
-    border-radius: 8px;
-    color: white;
-    font-weight: bold;
-    font-size: 14px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-} */
-
 .skill-item {
     display: flex;
     flex-direction: column;
@@ -108,15 +91,17 @@
     font-weight: 500;
     cursor: default;
     transition:
-        transform 0.2s ease,
+        transform 0.15s ease-out,
         box-shadow 0.2s ease,
         border-color 0.2s ease;
+    transform-style: preserve-3d;
     position: relative;
+    /*Esto es clave para el brillo*/
     overflow: hidden;
     width: 120px;
-    height:120px;
-    gap:8px;
-    /*Esto es clave para el brillo*/
+    height: 120px;
+    gap: 8px;
+
 }
 
 .skill-item::after {
@@ -167,15 +152,12 @@
     box-shadow:
         0 8px 20px rgba(59, 130, 246, 0.15),
         0 0 12px rgba(59, 130, 246, 0.25);
-}   
+}
 
 .skill-item:hover img {
     filter: grayscale(0%);
     transform: scale(1.05);
 }
-
-
-
 
 .skills-list {
     grid-template-columns: 1fr;
@@ -183,6 +165,34 @@
 
 .skills-intro {
     padding: 0px;
+}
+
+/*ANIMACIONES DE ENTRADA*/
+
+h2,
+.skills-categories,
+.skills-view {
+    opacity: 0;
+    transform: translateY(8px);
+    transition:
+        opacity 600ms cubic-bezier(0.22, 1, 0.36, 1),
+        transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/*FIN DE LAS ANIMACIONES DE ENTRADA*/
+
+
+/*PARA DISPOSITIVOS QUE SEAN TÁCTILES*/
+@media (hover: none) {
+    .skill-item {
+        transform: none !important;
+    }
+
 }
 
 @media (min-width: 328px) {

@@ -1,17 +1,17 @@
 <div class="skills-container">
     <div class="skills-intro">
-        <h2>Skills</h2>
-        <div class="skills-categories">
+        <h2 [class.is-visible]="showTitle">Skills</h2>
+        <div class="skills-categories" [class.is-visible]="showCategories">
             <a (click)="setCategory('frontend')" [class.active]="inicial === 'frontend'">Frontend</a>
             <a (click)="setCategory('backend')" [class.active]="inicial === 'backend'">Backend</a>
             <a (click)="setCategory('tools')" [class.active]="inicial === 'tools'">Tools</a>
         </div>
 
-        <div class="skills-view">
+        <div class="skills-view" [class.is-visible]="showSkills">
             <!-- * Si cumple 'inicial' es igual a 'frontend', poneme esa clasecita llamada .active-->
             <section [class.active]="inicial === 'frontend'">
                 <ul class="skills-list">
-                    <li class="li-items" *ngFor="let a of skills.frontend">
+                    <li class="li-items" *ngFor="let a of skills.frontend" (mousemove)="onMouseMove($event)">
                         <div class="skill-item">
                             <img src="{{a.url}}" alt="{{a.name}} logo" />
                             {{a.name}}
@@ -23,8 +23,9 @@
 
             <section [class.active]="inicial === 'backend'">
                 <ul class="skills-list">
-                    <li class="li-items" *ngFor="let a of skills.backend">
-                        <div class="skill-item">
+                    <li class="li-items" *ngFor="let a of skills.backend" (mousemove)="onMouseMove($event)"
+                        (mouseleave)="onMouseLeave($event)">
+                        <div class=" skill-item">
                             <img src="{{a.url}}" alt="{{a.name}} logo" />
                             {{a.name}}
                         </div>
@@ -35,7 +36,8 @@
 
             <section [class.active]="inicial === 'tools'">
                 <ul class="skills-list">
-                    <li class="li-items" *ngFor="let a of skills.tools">
+                    <li class="li-items" *ngFor="let a of skills.tools" (mousemove)="onMouseMove($event)"
+                        (mouseleave)="onMouseLeave($event)">
                         <div class="skill-item">
                             <img src="{{a.url}}" alt="{{a.name}} logo" />
                             <span>{{a.name}}</span>
@@ -46,4 +48,5 @@
         </div>
 
     </div>
+
 </div>
