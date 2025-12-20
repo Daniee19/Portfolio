@@ -1,14 +1,21 @@
 /*Estilo base para movil*/
+.hero-image {
+    transition: transform 120ms ease-out;
+}
 
 .me-img-1 {
     display: inline-block;
     border-radius: 50%;
     width: 200px;
     margin: auto;
+    box-shadow:
+        0 40px 80px rgba(0, 0, 0, 0.15);
 }
 
 .me-img-2 {
     display: none;
+    box-shadow:
+        0 40px 80px rgba(0, 0, 0, 0.15);
 }
 
 .home-container {
@@ -25,6 +32,30 @@
     color: black;
     margin-bottom: 16px;
 }
+
+/*Animación de entrada*/
+h1,
+i,
+p,
+ul,
+button,
+.hero-actions,
+.socials,
+.hero-image,
+section {
+    opacity: 0;
+    transform: translateY(8px);
+    transition:
+        opacity 600ms cubic-bezier(0.22, 1, 0.36, 1),
+        transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/*Fin de la animación de entrada*/
 
 .home-links {
     padding-left: 20px;
@@ -96,6 +127,25 @@
     max-width: 550px;
 }
 
+.icon-star {
+    animation: softPulse infinite 3.5s ease;
+}
+
+/*HACER QUE LA ESTRELLA "RESPIRE"*/
+@keyframes softPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.85;
+    }
+
+    50% {
+        transform: scale(1.08);
+        opacity: 1;
+    }
+}
+
 /*Diseño para tablet*/
 @media(min-width:768px) {
     .home-container h1 {
@@ -142,21 +192,24 @@
         border-radius: 50%;
         margin: auto;
     }
+
     .home-container {
         padding: 100px 20px;
     }
-    .home-hero{
-        display:flex;
+
+    .home-hero {
+        display: flex;
         align-items: center;
         justify-content: space-between;
         gap: 40px;
-        width:fit-content;
-        margin:auto;
+        width: fit-content;
+        margin: auto;
     }
-    .home-intro{
+
+    .home-intro {
         text-align: left;
     }
-    
+
     .home-intro h1 {
         font-size: 48px;
     }

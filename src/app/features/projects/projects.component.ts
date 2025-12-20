@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SKILLS } from '../skills/skills.data';
 import { PROJECTS } from './projects.data';
@@ -8,7 +8,9 @@ import {
   trigger,
   transition,
   style,
-  animate
+  animate,
+  query,
+  stagger
 } from '@angular/animations';
 
 type SkillCategory = 'frontend' | 'backend' | 'tools';
@@ -19,8 +21,6 @@ interface Skill {
   category: SkillCategory;
 }
 
-
-
 @Component({
   selector: 'app-projects',
   standalone: true,
@@ -29,33 +29,46 @@ interface Skill {
   styleUrl: './projects.component.css',
   animations: [
     trigger('listAnimation', [
-
       transition(':enter', [
-        style({
-          opacity: 0,
-          transform: 'translateY(15px) scale(.95)'
-        }),
-        animate('250ms ease-out', style({
-          opacity: 1,
-          transform: 'translateY(0) scale(1)'
-        }))
-      ]),
-
-      transition(':leave', [
-        animate('200ms ease-in', style({
-          opacity: 0,
-          transform: 'translateY(-10px) scale(.95)'
-        }))
+        query('.project-card', [
+          style({
+            opacity: 0,
+            transform: 'translateY(15px) scale(.95)'
+          }),
+          stagger(120, [
+            animate(
+              '600ms cubic-bezier(0.22, 1, 0.36, 1)',
+              style({
+                opacity: 1,
+                transform: 'translateY(0) scale(1)'
+              })
+            )
+          ])
+        ], { optional: true })
       ])
-
     ])
   ]
 })
 
 
-export class ProjectsComponent {
+export class ProjectsComponent implements OnInit {
+  //Desplazar
+  showHeader = false;
+  showAvailableTitleFilter = false;
+  showLine = false;
+  showLi = false;
+  showProjects = false;
+  //Agrandar
+  showTitleProject = false;
+  ngOnInit(): void {
+    setTimeout(() => this.showTitleProject = true, 280)
+    setTimeout(() => this.showHeader = true, 300);
+    setTimeout(() => this.showAvailableTitleFilter = true, 450);
+    setTimeout(() => this.showLi = true, 550);
+    setTimeout(() => this.showProjects = true, 650);
 
-  
+    setTimeout(() => this.showLine = true, 350);
+  }
 
   constructor() {
     console.log('🆕 componente creado');

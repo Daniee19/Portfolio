@@ -28,20 +28,20 @@
 
 .name-items,
 .email-items,
-.contact-items {
+.contact-details {
     display: flex;
     flex-direction: column;
 }
 
 .name-items input,
 .email-items input,
-.contact-items textarea {
+.contact-details textarea {
     padding: 10px;
     border: 0px;
     border-bottom: 1px solid gray;
 }
 
-.contact-items textarea {
+.contact-details textarea {
     height: 100px;
 }
 
@@ -130,7 +130,7 @@
 .contact-last {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: flex-end;
     gap: 6px;
 }
 
@@ -138,6 +138,29 @@
     color: gray;
     font-size: 0.9rem;
 }
+
+/*AGREGAR ANIMACIÓN AL ENTRAR*/
+.contact-title,
+.contact-name,
+.contact-email,
+.title-topic,
+.option-button,
+.contact-details,
+.contact-last {
+    opacity: 0;
+    transform: translateY(8px);
+    transition:
+        opacity 800ms cubic-bezier(0.22, 1, 0.36, 1),
+        transform 800ms cubic-bezier(0.22, 1, 0.36, 1)
+}
+
+.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/*FIN DEL AGREGAR ANIMACIÓN AL ENTRAR*/
+
 
 @media(min-width:642px) {
     .contact-name-email {

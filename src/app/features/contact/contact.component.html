@@ -1,10 +1,10 @@
 <div class="contact-container">
-    <div class="contact-title">
+    <div class="contact-title" [class.is-visible]="showTitle">
         <h2><span>Say Helloo!</span> and tell me about your idea <i class="fa-solid fa-star"></i></h2>
     </div>
     <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
         <div class="contact-name-email">
-            <div class="contact-name">
+            <div class="contact-name" [class.is-visible]="showName">
                 <div class="name-items">
                     <label for="name">Name:*</label>
                     <input id="name" type="text" formControlName="name" />
@@ -14,7 +14,7 @@
                     Name is required
                 </div>
             </div>
-            <div class="contact-email">
+            <div class="contact-email" [class.is-visible]="showEmail">
                 <div class="email-items">
                     <label for="email">Email:*</label>
                     <input id="email" type="email" formControlName="email" />
@@ -27,9 +27,10 @@
         </div>
 
         <div class="contact-topic">
-            <h3>What's your mind?*</h3>
+            <h3 class="title-topic" [class.is-visible]="showTitleTopic">What's your mind?*</h3>
             <div class="options">
-                <button type="button" *ngFor="let option of options" (click)="selectOption(option)"
+                <button class="option-button" [class.is-visible]="showOptionButton" type="button"
+                    *ngFor="let option of options" (click)="selectOption(option)"
                     [class.active]="contactForm.get('topic')?.value === option">
                     {{ option }}
                 </button>
@@ -42,7 +43,7 @@
         </div>
 
         <div class="contact-message">
-            <div class="contact-items">
+            <div class="contact-details" [class.is-visible]="showContactDetails">
                 <label for="message">Details:*</label>
                 <textarea id="message" formControlName="message"></textarea>
             </div>
@@ -51,7 +52,7 @@
                 Details are required
             </div>
         </div>
-        <div class="contact-last">
+        <div class="contact-last" [class.is-visible]="showContactLast">
             <button type="submit" [disabled]="contactForm.invalid" class="contact-submit">
                 Send Message →
             </button>

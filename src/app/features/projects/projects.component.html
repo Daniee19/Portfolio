@@ -1,11 +1,9 @@
 <div class="projects-container">
     <!--BACKDROP-->
-    <div class="backdrop" 
-    *ngIf="defecto" 
-    (click)="setBurger()"> 
+    <div class="backdrop" *ngIf="defecto" (click)="setBurger()">
     </div>
     <section class="filtros-section" [class.active]="defecto === true">
-        <div class="filtros-header">
+        <div class="filtros-header" [class.is-visible]="showHeader">
             <h2>Filters</h2>
             <div class="icons-header">
                 <i class="fa-solid fa-trash-can fa-xl" (click)="deleteAllFilters()"></i>
@@ -19,11 +17,11 @@
             </div>
         </div>
 
-        <hr />
+        <hr [class.is-visible]="showLine" />
         <div class="filtros-disponibles">
-            <h3>Frontend</h3>
+            <h3 class="titulo-filtros-disponibles" [class.is-visible]="showAvailableTitleFilter">Frontend</h3>
             <ul>
-                <li *ngFor="let filter of filters.frontend">
+                <li *ngFor="let filter of filters.frontend" [class.is-visible]="showLi">
                     <div class="filter-item" (click)="selectFilter(filter)">
                         {{ filter.name }}
                     </div>
@@ -32,9 +30,9 @@
         </div>
 
         <div class="filtros-disponibles">
-            <h3>Backend</h3>
+            <h3 class="titulo-filtros-disponibles" [class.is-visible]="showAvailableTitleFilter">Backend</h3>
             <ul>
-                <li *ngFor="let filter of filters.backend">
+                <li *ngFor="let filter of filters.backend" [class.is-visible]="showLi">
                     <div class="filter-item" (click)="selectFilter(filter)">
                         {{ filter.name }}
                     </div>
@@ -43,9 +41,9 @@
         </div>
 
         <div class="filtros-disponibles">
-            <h3>Tools</h3>
+            <h3 class="titulo-filtros-disponibles" [class.is-visible]="showAvailableTitleFilter">Tools</h3>
             <ul>
-                <li *ngFor="let filter of filters.tools">
+                <li *ngFor="let filter of filters.tools" [class.is-visible]="showLi">
                     <div class="filter-item" (click)="selectFilter(filter)">
                         {{ filter.name }}
                     </div>
@@ -56,12 +54,12 @@
 
     <section class="projects-section">
         <div class="projects-intro">
-            <h2>Projects</h2>
+            <h2 class="titulo-project-intro" [class.agrandar-tamanio-normal]="showTitleProject">Projects</h2>
             <a class="arrow-icon" (click)="setBurger()">
                 <i class="fa-solid fa-angles-right fa-xl"></i>
             </a>
         </div>
-        <div class="only-projects">
+        <div class="only-projects" *ngIf="showProjects" [@listAnimation]>
             <!-- 🧠 Respuesta corta (para que te quedes tranquilo) (sobre como funciona el @listAnimation)
 
             :enter se dispara cuando un elemento aparece en el DOM
@@ -70,7 +68,8 @@
             push() y filter() solo provocan esos cambios
 
             👉 Angular no escucha métodos, escucha el DOM. -->
-            <div class="project-card" *ngFor="let project of projects" @listAnimation>
+
+            <div class="project-card" *ngFor="let project of projects">
 
                 <div class="project-image">
 
@@ -101,5 +100,6 @@
                 </div>
             </div>
         </div>
+
     </section>
 </div>

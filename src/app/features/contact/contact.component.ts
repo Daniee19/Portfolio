@@ -14,6 +14,15 @@ import emailjs from 'emailjs-com';
   styleUrl: './contact.component.css'
 })
 export class ContactComponent implements OnInit {
+
+  showTitle = false;
+  showName = false;
+  showEmail = false;
+  showTitleTopic = false;
+  showOptionButton = false;
+  showContactDetails = false;
+  showContactLast = false;
+
   options = [
     "Website design", "Backend development", "Full Stack development", "Other"
   ]
@@ -33,6 +42,15 @@ export class ContactComponent implements OnInit {
 
   constructor(private fb: FormBuilder) { }
   ngOnInit(): void {
+
+    setTimeout(() => this.showTitle = true, 100);
+    setTimeout(() => this.showName = true, 250);
+    setTimeout(() => this.showEmail = true, 300);
+    setTimeout(() => this.showTitleTopic = true, 350);
+    setTimeout(() => this.showOptionButton = true, 450);
+    setTimeout(() => this.showContactDetails = true, 500);
+    setTimeout(() => this.showContactLast = true, 600);
+
     this.contactForm = this.fb.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
