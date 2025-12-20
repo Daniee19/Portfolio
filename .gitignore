@@ -41,5 +41,8 @@ testem.log
 .DS_Store
 Thumbs.db
 
-/src/environments/environment.ts
-/src/environments/environment.prod.ts
+# Ignorar todos los environments reales
+/src/environments/environments*.ts
+
+# PERO permitir el ejemplo
+!/src/environments/environments.example.ts
