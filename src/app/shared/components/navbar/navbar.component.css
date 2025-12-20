@@ -28,7 +28,7 @@
     height: 2px;
     background: linear-gradient(to right,
             transparent,
-            #020617,
+            #ffffff,
             transparent);
     opacity: 0;
     transition: opacity 0.3s ease;

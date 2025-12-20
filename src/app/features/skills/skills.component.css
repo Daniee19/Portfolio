@@ -34,6 +34,7 @@
     text-align: center;
     justify-content: center;
     color: white;
+    border-radius: 25px;
 }
 
 .skills-categories:hover {

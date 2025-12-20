@@ -58,7 +58,8 @@
     background-color: lightgreen;
     padding: 4px 10px;
     cursor: pointer;
-    width: fit-content
+    width: fit-content;
+    transition: all .19s ease-out;
 }
 
 .item-seleccionado:hover {
