@@ -16,7 +16,6 @@ export class AppComponent implements AfterViewInit {
 
   @ViewChild('bubbleLayer', { static: false })
   bubbleLayer?: ElementRef<HTMLDivElement>;
-
   bubbles: HTMLElement[] = [];
   positions: { x: number; y: number }[] = [];
   maxBubbles = 6;
@@ -44,6 +43,7 @@ export class AppComponent implements AfterViewInit {
     });
 
     const animate = () => {
+
       this.positions[0].x += (mouseX - this.positions[0].x) * 0.25;
       this.positions[0].y += (mouseY - this.positions[0].y) * 0.25;
 
@@ -64,6 +64,5 @@ export class AppComponent implements AfterViewInit {
     };
 
     animate();
-
   }
 }

@@ -190,13 +190,11 @@ h2,
 
 /*FIN DE LAS ANIMACIONES DE ENTRADA*/
 
-
 /*PARA DISPOSITIVOS QUE SEAN TÁCTILES*/
 @media (hover: none) {
     .skill-item {
         transform: none !important;
     }
-
 }
 
 @media (min-width: 480px) {
@@ -218,8 +216,6 @@ h2,
     .skills-view {
         border-radius: 20px;
     }
-
-
 }
 
 /*TABLET*/

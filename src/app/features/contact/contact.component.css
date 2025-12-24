@@ -86,30 +86,17 @@ textarea {
     border-color: #000;
 }
 
-/* .contact-submit {
-    border: 1px solid #737373;
-    background: transparent;
-    padding: 4px 10px;
-    cursor: pointer;
-    margin-top:20px;
-    font-weight: 600;
-} */
-
 /*BOTÓN DE SUBMIT*/
 .contact-submit {
     margin-top: 24px;
     padding: 12px 24px;
-
     background: #111;
     /* sólido */
     color: #fff;
-
     border: none;
     border-radius: 6px;
-
     font-weight: 600;
     letter-spacing: 0.5px;
-
     cursor: pointer;
     transition: all 0.2s ease;
 }

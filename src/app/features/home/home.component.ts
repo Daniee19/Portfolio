@@ -25,6 +25,7 @@ export class HomeComponent implements OnInit {
     setTimeout(() => this.showImage = true, 700);
     setTimeout(() => this.showSocials = true, 600);
   }
+
   @ViewChild('heroImageLarge') heroImageLarge?: ElementRef;
 
   ngAfterViewInit() {

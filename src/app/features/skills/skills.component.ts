@@ -23,11 +23,9 @@ export class SkillsComponent implements OnInit {
   }
 
   inicial = "frontend";
-
   setCategory(category: string) {
     this.inicial = category;
   }
-
 
   //*Cuando el mouse toque una habilidad, esta se va a inclinar (como si estuviese flotando)
   onMouseMove(event: MouseEvent) {
