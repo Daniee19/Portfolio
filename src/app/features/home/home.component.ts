@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { SocialsComponent } from '../../shared/components/socials/socials.component';
 import { RouterLink } from '@angular/router';
 
@@ -25,20 +25,25 @@ export class HomeComponent implements OnInit {
     setTimeout(() => this.showImage = true, 700);
     setTimeout(() => this.showSocials = true, 600);
   }
-  @ViewChild('heroImageLarge') heroImageLarge!: ElementRef;
+  @ViewChild('heroImageLarge') heroImageLarge?: ElementRef;
 
   ngAfterViewInit() {
-    window.addEventListener('mousemove', (e) => {
-      const x = (e.clientX / window.innerWidth - 0.5) * 8;
-      const y = (e.clientY / window.innerHeight - 0.5) * 8;
+    window.addEventListener('mousemove', this.onMouseMove)
+  }
+  onMouseMove = (e: MouseEvent) => {
+    if (!this.heroImageLarge) return;
 
-      this.heroImageLarge.nativeElement.style.transform =
-        `translate(${x}px, ${y}px)`;
-    });
+    const x = (e.clientX / window.innerWidth - 0.5) * 8;
+    const y = (e.clientY / window.innerHeight - 0.5) * 8;
+
+    this.heroImageLarge.nativeElement.style.transform =
+      `translate(${x}px, ${y}px)`;
+  };
+
+  //Útil para producción
+  ngOnDestroy() {
+    window.removeEventListener('mousemove', this.onMouseMove);
   }
 
-
-
-
-  cv: string = '../../../assets/docs/CV-Daniel-Castaneda-Ing-Sistemas.pdf';
+  cv: string = 'assets/docs/CV-Daniel-Castaneda-Ing-Sistemas.pdf';
 }

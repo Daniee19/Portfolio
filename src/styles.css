@@ -9,37 +9,18 @@ body {
     font-family: 'Inter', sans-serif;
     font-size: 16px;
     line-height: 1.6;
+    background: linear-gradient(180deg,
+            #ffffff 0%,
+            #f8fafc 100%);
 }
 
+html,
+body {
+    min-height: 100%;
+}
 
 h1,
 h2,
 h3 {
     font-family: 'Poppins', sans-serif;
-}
-
-/*TRABAJARÁ CON EL MOUSE (BURBUJITAS)*/
-.bubble-layer {
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: 9999;
-}
-
-.bubble {
-    position: fixed;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: rgba(59, 130, 246, 0.35);
-    filter: blur(0.5px);
-    pointer-events: none;
-}
-
-@media (hover: none) {
-
-    .bubble {
-        display: none;
-    }
-
 }

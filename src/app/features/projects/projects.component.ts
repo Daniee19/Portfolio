@@ -70,9 +70,6 @@ export class ProjectsComponent implements OnInit {
     setTimeout(() => this.showLine = true, 350);
   }
 
-  constructor() {
-    console.log('🆕 componente creado');
-  }
   defecto = true;
 
   setBurger() {
@@ -144,7 +141,6 @@ export class ProjectsComponent implements OnInit {
       )
     };
   }
-
 
   applyFilters() {
     //*Si no hay filtros seleccionados, mostrar todos los proyectos

@@ -3,6 +3,9 @@
     background: #000000;
     color: rgb(255, 255, 255);
     padding: 1rem;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
 }
 
 .navbar-container {
@@ -57,7 +60,7 @@
     list-style: none;
     padding: 1rem;
     gap: 1rem;
-    z-index: 99;
+    z-index: 1000;
 }
 
 .nav-links a {

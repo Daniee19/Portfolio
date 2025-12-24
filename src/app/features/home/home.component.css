@@ -21,6 +21,7 @@
 .home-container {
     padding: 20px;
     text-align: center;
+    height: 100vh;
 }
 
 .home-container .flat {
@@ -101,7 +102,7 @@ section {
 }
 
 .home-buttons .second {
-    background-color: white;
+    background-color: transparent;
     color: black;
     padding: 10px;
     cursor: pointer;
@@ -129,6 +130,10 @@ section {
 
 .icon-star {
     animation: softPulse infinite 3.5s ease;
+}
+
+.home-intro {
+    margin: 3.1rem 0px;
 }
 
 /*HACER QUE LA ESTRELLA "RESPIRE"*/

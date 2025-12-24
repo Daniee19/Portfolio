@@ -4,37 +4,40 @@
 }
 
 .skills-container {
-    background-color: rgb(255, 255, 255);
+    background-color: transparent;
     margin: 0 auto;
     padding: 20px;
     display: flex;
     width: 100%;
     align-items: center;
     justify-content: center;
+    min-height: 100vh;
 }
 
 .skills-intro {
-    background-color: white;
-    padding: 20px 40px;
+    background-color: rgba(255, 255, 255, 0);
+    /* padding: 20px 40px; */
     margin-bottom: 10px;
     font-size: 20px;
     width: 100%;
     text-align: center;
+    margin: 4rem 0rem;
 }
 
 .skills-categories {
     display: flex;
     gap: 20px;
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(3 0 0 / 80%);
     font-size: 16px;
     font-weight: bold;
     padding: 10px 40px;
     margin-bottom: 10px;
-    width: 100%;
+    width: fit-content;
     text-align: center;
     justify-content: center;
     color: white;
     border-radius: 25px;
+    margin: auto;
 }
 
 .skills-categories:hover {
@@ -52,9 +55,11 @@
 }
 
 .skills-view {
-    background-color: white;
-    padding: 20px 40px;
+    background-color: transparent;
+    padding: 0px;
     width: 100%;
+    border-radius: 25px;
+    margin-top: 10px;
 }
 
 .skills-view>section {
@@ -66,11 +71,13 @@
 }
 
 .skills-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 16px;
-    padding: 0;
+    padding: 20px;
     list-style: none;
+    border-radius: 25px;
 }
 
 .li-items {
@@ -160,10 +167,6 @@
     transform: scale(1.05);
 }
 
-.skills-list {
-    grid-template-columns: 1fr;
-}
-
 .skills-intro {
     padding: 0px;
 }
@@ -196,26 +199,27 @@ h2,
 
 }
 
-@media (min-width: 328px) {
-    .skills-list {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
 @media (min-width: 480px) {
-    .skills-list {
-        grid-template-columns: 1fr 1fr 1fr;
-    }
-
     .skills-intro {
         padding: 20px 40px;
     }
+
+    .skills-intro h2 {
+        font-size: 36px;
+    }
+
 }
 
 @media (min-width: 680px) {
-    .skills-list {
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+    .skills-intro {
+        width: 90%;
     }
+
+    .skills-view {
+        border-radius: 20px;
+    }
+
+
 }
 
 /*TABLET*/
@@ -231,15 +235,21 @@ h2,
         font-size: 48px;
         font-weight: bold;
         text-align: center;
+        border-radius: 20px;
     }
 
     .skills-list {
-        grid-template-columns: repeat(6, 1fr);
+        width: 70%;
+        margin: auto;
+    }
+
+    .skills-container {
+        height: 100vh;
     }
 }
 
 @media (min-width: 1200px) {
     .skills-container {
-        width: 70%;
+        width: 80%;
     }
 }

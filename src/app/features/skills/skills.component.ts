@@ -22,18 +22,8 @@ export class SkillsComponent implements OnInit {
     setTimeout(() => this.showSkills= true, 400);
   }
 
-
   inicial = "frontend";
 
-
-  ngAfterViewInit() {
-    const cursor = document.querySelector('.custom-cursor') as HTMLElement;
-
-    window.addEventListener('mousemove', (e) => {
-      cursor.style.left = `${e.clientX}px`;
-      cursor.style.top = `${e.clientY}px`;
-    });
-  }
   setCategory(category: string) {
     this.inicial = category;
   }

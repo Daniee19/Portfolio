@@ -1,0 +1,23 @@
+/*TRABAJARÁ CON EL MOUSE (BURBUJITAS)*/
+.bubble-layer {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 99999;
+}
+
+.bubble {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(59, 130, 246, 0.9);
+    filter: blur(1px);
+    pointer-events: none;
+    position: absolute;
+}
+
+@media (hover: none) {
+    .bubble {
+        display: none;
+    }
+}

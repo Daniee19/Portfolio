@@ -4,12 +4,19 @@
     align-items: center;
     padding: 2rem;
     gap: 10px;
+    min-height: 100%;
+}
+
+button,
+input,
+textarea {
+    background-color: transparent;
 }
 
 .contact-container .contact-title {
     font-size: 1.5rem;
     width: 100%;
-    margin-bottom: 20px;
+    margin: 5rem 0rem 20px;
 }
 
 .contact-title span {
